@@ -1,0 +1,378 @@
+in this case i think about the spiral model and evolutionary prototyping model will work
+definitely you dont want to have a pure water from water
+why
+well because it is very expensive with a pure waterfall model to make changes during the course of the project especially changes that involve requirements
+why
+because we saw that it can be very expensive
+whereas with the spiral model we saw that being iterative we can actually make correction throughout development
+similarly with evolutionary prototyping we keep evolving our system based on the customer feedback
+and therefore if something changes we will get feedback right away and we will be able to adapt
+so the key thing here is that anything that is iterative works better in the case of changing environments
+so situations in which your requirements the situation the project might change
+whereas waterfall is more appropriate for situations in which the requirements are stable we know the domain and possibly we also know the technologies involved
+now we get to the final part of the lesson
+and in this part i want to talk about well known ineffective development practices
+these practices when followed tend to lead to predictably bad results
+so lets look at some examples of these classic mistakes
+and were going to start with mistakes involving people
+and notice that there is a long list
+so im going to discuss just a few of those mistakes
+and im going to point you to more information on this topic in the class notes
+and some of these mistakes are actually kind of entertaining
+so ill recommend that you look at the class notes and go in more depth in this list
+so the first people mistake i want to mention is the one that i define heroics
+and this refers to too much emphasis on can do attitudes so this idea that one person by himself or by herself can do everything and can make the difference in the whole project
+and unfortunately this encourages extreme risk taking and discourages cooperation which is plain bad for the project
+for example it might force people not to report schedule slips
+it might force people to take on on too much responsibility
+and normally and i saw it happen many times the final result is a failure
+so what you want when youre developing a larger project is actually to apply soft engineering principles
+have teams have team work and have cooperation among the different team members without pointing too much on single individuals
+another classic mistake is to not create the right working environment
+we all like to work in nice environments
+and there is strong evidence that the working environments can play a big role in productivity
+there is evidence that productivity increases when the workplace is nice quiet warm and welcoming
+finally some of the most important people relating mistakes are due to poor people management
+for example lack of leaderships or leadership that is exercised using the wrong means in the wrong way which can lead to very unhappy personnel and therefore low productivity or even people leaving teams
+another classic example of poor management is adding people to a project that is behind schedule which never works
+why it doesnt work
+because these new people need to be brought up to speed and that causes further delays rather than improving the situation with the project schedule
+now before we move to the last part of the lesson lets have a quick quiz on software process models to make sure that we are all on the same page
+so i am going to ask you two questions
+the first question is which of the following models is most suitable to develop a software control system
+and when you think about the software control system you can think about for example the control system for the software in an airplane
+would you rather use a pure waterfall model
+test driven development
+or an evolutionary prototyping approach
+this is the context in which typically a pure waterfall process will work well
+why
+well because its a context in which requirements are usually well understood
+the domain is well understood so that kind of system has been built many times before
+and also its a system in which we dont expect requirements to change dramatically over time
+therefore a waterfall model in which we collect all the requirements at the beginning and then we move to the subsequent phases might be the most appropriate one
+probably we dont want to do evolutionary prototyping in the case of the control system for an airplane
+same thing holds for tdd so we want to be a little more rigorous in those cases
+after we have designed our system we can implement it
+in the implementation phase what we do is basically taking care of realizing the design of the system that we just created and create an actual software system
+there are four fundamental principles four pillars that can affect the way in which software is constructed
+the first one is the reduction of complexity
+this aims to build software that is easier to understand and use
+the second pillar is the anticipation of diversity
+which takes into account that software construction might change in various way over time
+that is that software evolves
+in many cases it evolves in unexpected ways
+and therefore we have to be able to anticipate some of these changes
+the third pillar is the structuring for validation
+also called design for testability
+and what this means is that we want to build software so that it is easily testable during the subsequent validation and verification activities
+finally and this is especially true within specific organizations and or domains
+it is important that the software conforms to a set of internal or external standards
+and some examples of this might be for example for internal standards coding standards within an organization or naming standards within an organization
+as for external standards if for example you are developing some medical software
+there are some regulations and some standards that you have to adhere to in order for your software to be valid in that domain
+the next process model i want to discuss is evolutionary prototyping which works in four main phases
+we start from an initial concept then we design and implement a prototype based on this initial concept refine the prototype until it is acceptable and finally we complete and release the prototype
+therefore when developing a system using evolutionary prototyping the system is continually refined and rebuilt
+so it is an ideal process when not all requirements are well understood
+which is a very common situation
+so looking at this in a little more details what happens is that developers start by developing the parts of the system that they understand instead of working on developing a whole system including parts that might not be very clear at that stage
+the partial system is then shown to the customer and the customer feedback is used to drive the next iteration in which either changes are made to the current features or new features are added
+so either the current prototype is improved or the prototype is extended
+and finally when the customer agrees that the prototype is good enough the developers will complete all the remaining work on the system and release the prototype as the final product
+so lets discuss as we did for the previous process models what are the main advantages and disadvantages of evolutionary prototyping
+in this case the main advantage is the immediate feedback
+developers get feedback immediately as soon as they produce a prototype and they show it to the customer and therefore the risk of implementing the wrong system is minimized
+the main negative is the fact that its difficult to plan
+when using evolutionary prototype it is difficult to plan in advance how long the development is going to take because we dont know how many iterations will be needed
+and another drawback is that it can easily become an excuse to do kind of do cut and fix kind of approaches in which we hack something together fix the main issues when the customer gives us feedback and then continue this way until the final product is something that is kind of working but its not really a product of high quality
+something else i want to point out before we move to the next software process model is that there are many different kinds of prototyping so evolutionary prototyping is just one of them
+for example throwaway prototyping is another kind of prototyping in which the prototype is just used to gather requirements but is thrown away at the end of the requirements gathering instead of being evolved as it happens here
+the third category of mistakes that i want to mention is productrelated mistakes
+a typical example of productrelated mistake is gold plating of requirements
+and what that means is basically is that its very common for projects to have more requirements than they actually need
+for example marketing might want to add more features than the ones that are actually needed by the users
+and of course having more requirements lengthens the projects schedule in a totally unnecessary way
+feature creep is another common mistake and consists in adding more and more features to a product that were not initially planned and are not really needed in most cases
+and here there is evidence that the average project experiences about a 25 growth in the number of features over its lifetime which can clearly highly effect the project schedule
+finally if youre working on a project that strains the limits of computer science
+for example because you need to develop new algorithms for the project or you have to use new techniques
+then that project might be more research than actual development
+and therefore it should be managed accordingly
+for example by taking into account that you will have a highly unpredictable schedule
+to conclude this lesson im going to have a simple quiz and what im going to ask you is which kind of mistake adding people to a late project is
+and you can pick between a people mistake a product mistake a technology mistake or maybe this is not a mistake at all it is actually okay to add people to a project that is late
+the second question i want to ask you is which model is the most suitable if you expect midcourse corrections
+would you rather use a pure waterfall model a spiral model or evolutionary prototyping
+after we have built our system verification and validation is that phase of software development that aims to check that the software system meets its specification and fulfills its intended purpose
+more precisely we can look at verification and validation independently
+and validation is the activity that answers the question did we build the right system
+did we build the system that the customer wants
+that will make the customer happy
+whereas verification answers a different question which is did we build the system right
+so given a description of the system that is the one that we derived from the customer through the collection of requirements and then design and so on did we build a system that actually implements the specification that we defined
+and when we look at verification theres many many ways of doing verification and in fact in the mini course number four we will cover verification extensively
+the only thing i want to mention here is the fact that verification can be performed at different levels
+in particular it can be performed at the unit level in which we test that the individual units work as a expected
+can be performed in the integration level in which what we test is the interaction between the different units
+so we want to make sure that the different modules talk to each other in the right way
+and finally there is system testing in which we test the system as a whole and we want to make sure that all the system all the different pieces of the system work together in the right way
+and this is also the level at which then we will apply validation and some other testing techniques like stress testing or robustness testing and so on
+and as i said im not going to say anything more on this topic because we will cover verification and validation and testing in particular in great details in mini course number four
+and the answer is the third one
+the traditional software phases which are the ones that we just discussed are requirements engineering design implementation verification and validation and maintenance
+so lets start with requirements engineering which is the field within software engineering that deals with establishing the needs of stakeholders that are to be solved by the software
+so why is this phase so important
+in general the cost of correcting an error depends on the number of subsequent decisions that are based on it
+therefore errors made in understanding requirements have the potential for greatest cost because many other design decisions depend on them and many other follow up decisions depend on them
+in fact if we look at this diagram which is again a qualitative diagram where we have the cost of error correction over the phase in which the error is discovered
+we can see that if we discover an error in requirements its going to cost us one
+if we find it in in design its going to cost us five and so on and so forth
+and the cost grows dramatically as we go from the requirements phase to the maintenance phase
+why
+because of course if we discover a problem here were left to undo a lot of the decision that we had made before to correct the error
+whereas if we find an error here we can correct it right away and we dont affect the subsequent phases
+so how can we collect the right requirements
+traditional requirements in engineering does so through a set of steps
+the first step is elicitation which is the collection of requirements from stake holders and other sources and can be done in a variety of ways we will discuss some of them
+the second is requirement analysis which involved the study and deeper understanding of the collective requirements
+the third step is this specification of requirements in which the collective requirements are suitably represented organized and save so that they can be shared
+also in his case there are many ways to do this and we will see some of this ways when we talk about the requirements engineering in the dedicated lesson
+once the requirements have been specified they can be validated to make sure that theyre complete consistent no redundant and so on
+so that theyve satisfied a set of importance properties for requirements
+finally the fifth step is requirements management which accounts for changes to requirements during the lifetime of the project
+and here i talked about steps kind of giving the impression that were just going from the first step to the fifth one and that this is sort of a linear process
+in reality as we will see this is more of an iterative process in which will go and cover the different phases in an iterative fashion
+we will discuss extensively requirements engineering in our second minicourse
+the next model that we will discuss is the spiral model which was first described by barry boehm which is the professor that we interviewed at the beginning of this lesson
+in his paper from 1986 that was entitled a spiral model of software development and enhancement
+and one of the main characteristics of that paper is that it was describing the spiral model using a diagram which is the one that im showing you here and this diagram has become very very popular and you probably saw it either in this form or one of the many variations of the diagram
+so im not going to discuss all of the details of the spiral model but i just want to give you an idea of its main characteristics
+the spiral model is an incremental riskoriented lifecycle model that has four main phases listed here determine objectives identify and resolve risks development and tests and plan the next iteration
+a software project will go through these four phases in an iterative way
+in the first phase the requirements will be gathered
+in the second phase the risks and the alternate solutions will be identified and a prototype will be produced
+software and tests for the software are produced in the development and test phase which is the third step of the process
+finally in the fourth phase the output of the project so far is evaluated and the next iteration is planned
+so basically what the spiral process prescribes is a way of developing software by going through these phases in an iterative way in which we learn more and more of the software we identify more and more and account for more and more risks and we go more and more towards our final solution our final release
+there are several advantages of using a spiral model
+the first one is that the extensive risk analysis does reduce the chances of the project to fail
+so there is a risk reduction advantage
+the second advantage is that functionality can be added at a later phase because of the iterative nature of the process
+and finally software is produced early in the software lifecycle
+so at any iteration we have something to show for our development
+we dont wait until the end before producing something
+and then of course theres also the advantage that we can get early feedback from the customer about what we produced
+the main disadvantages on the other hand of the spiral model are that the risk analysis requires a highly specific expertise
+and unfortunately the whole success of the process is highly dependent on risk analysis
+so risk analysis has to be done right
+and finally the spiral model is way more complex than other models like for example the water fall model
+and therefore it can be costly to implement
+we just saw several software process models and there are many many more
+and because these process models define the master plan for our project the specific process model that we choose has as much influence over a projects success as any other major planning decision that we make
+therefore it is very important that we pick the appropriate model for our development process
+picking an appropriate model can ensure the success of a project
+on the contrary if we choose the wrong model that can be a constant source of problems and ultimately it can make the project fail
+so how can we choose the right model for a project
+to be able to do so we have to take into consideration many factors
+in particular we need to be aware of what level of understanding we have of the requirements
+do we understand all the requirements
+are we going to be able to collect all the requirements in advance or collecting requirements is going to be hard and therefore we might want to follow a process that is more flexible with that respect
+another important point is the expected lifetime of the project
+is this a quick project that we are putting together for a specific purpose or something thats going to last for for a number of years and that were going to maintain over all those years
+thats going to make a difference in the way we decide to develop that project
+also what is the level of risk involved
+do we know the domain very well
+do we know exactly the technologies involved
+well if so we might go with a more traditional process
+otherwise we might want to be more agile more flexible
+it is also very important to know the schedule constraints
+how much time how many resources do we have for this project
+what is the expected interaction with the management and the customer
+in particular for this ladder there are many processes that rely on the fact that there can be a continuous interaction with the customer
+if that interaction is not there theres no way we are going to be able to use these processes
+conversely there are processes that dont require the presence of the customer at all except for the initial phase and maybe some checking points and so if the customer is very inaccessible we might want to follow one of those processes instead of one of the more demanding ones in terms of customers time
+finally it is important to take into account the level of the expertise of the people involved
+do we have people that know the technologies that were using
+do we know people that know a specific kind of process
+some processes require some specific expertise and were not going to be able to follow that process if we dont have the right expertise
+so we need to take into account all of these aspects and sometimes more in order to be able to make the right decision and pick the right software process model for our project
+the first model we want to discuss is the grandfather of all life cycle models
+and it is the waterfall model
+in the waterfall model the project progresses to an orderly sequence of steps
+from the initial software concept down until the final phase
+which is system testing
+and at the end of each phase there will be a review to determine whether the project is ready to advance to the next phase
+the pure waterfall model performs well for softer products in which there is a stable product definition
+the domain is well known and the technologies involved are well understood
+in these kind of domains the waterfall model helps you to find errors in the early local stages of the projects
+if you remember what we discussed this is the place where we want to find errors not down here because finding them here will reduce the cost of our overall software development
+the main advantage of the waterfall model is that it allows you to find errors early
+however the main disadvantages of the waterfall model arise from the fact that it is not flexible
+normally it is difficult to fully specify requirements at the beginning of a project
+and this lack of flexibility is far from ideal when dealing with project in which requirements change the developers are not domain experts or the technology used are new and evolving that is it is less than ideal for most real world projects
+now that we discussed softer process models there is another important point i want to cover because its going to be useful for your projects
+documenting the activities carried out during the different phases of the softer lifecycle is a very important task
+the documents that we produce are used for different purposes such as communicative details of the software systems
+to difference the colors ensure the correct implementation of the system facilitate maintenance and so on
+there are standardized document that are provided by ieee that you can use for this purpose
+however theyre kind of heavyweight
+so for the project in this class when we will need them i will rather use this lightweight documents
+that we created by modifying the original ones and make them a little simpler
+in this our documents are actually used while teaching this class in the past
+so theyre well tested and work well for the kind of projects that we will perform
+i provide information on how to access these documents in the class notes
+at this point you know the possible activities the possible phases performed during the software development process
+but there this something that we still havent discussed which is very important
+and that is how should we put these activities together to develop software
+and this all comes down to the concept of software process model
+also called software lifecycle model
+and what this is is a prescriptive model of what should happen from the very beginning to the very end
+of a software development process
+the main function of the life cycle model is to determine the order of the different activities so that we know which activities should come first and which ones should follow
+another important function of the life cycle model is to determine the transition criteria between activities
+so when we can go from one phase to the subsequent one
+in other words what the model should describe is what should we do next and how long should we continue to do it for each activity in the model
+now lets see a few traditional software process models
+i will discuss them here at the high level and then revisit some of these models in the different mini courses
+as we discussed before software development efforts normally result in the delivery of a software product that satisfies the user requirements
+so normally our software development organization will release this application to its final users however once the software is in operation many things can happen
+so for example the environment might change
+there might be new libraries
+there might be new systems in which our software has to operate
+or they may be future requests so the users may find out that guess what they want to do something different with the problem that we gave them
+or again and this is one of the most common occurrences users might find problems with the software and may file bug reports and send the bug reports back to the software developer
+these are the reasons why software maintenance is a necessary phase in software development
+software maintenance is the activity that sustains the software product as it evolves throughout its life cycle specifically in response to bug reports feature requests and environment changes
+development organisations perform three kinds of maintenance activities corrective maintenance to eliminate problems with the code perfective maintenance to accommodate feature request and in some cases just to improve the software for example to make it more efficient and finally adaptive maintenance to take care of the environment changes
+and after this activities have been performed the software developer will produce a new version of the application will release it and the cycle will continue through out the lifetime of the software
+thats why maintenance is a fundamental activity and a very expensive one
+and one of the reasons why maintenance is expensive that i want to mention now is regression testing
+during maintenance every time you modify your application you have to regression test the application where regression testing is the activity of retesting software after it has been modified to make sure that the changes you perform to the software work as expected and that your changes did not introduce any unforseen effect
+im pretty sure that youre familiar with the case of a new version of the software being released and just a couple of days later another version being released to fix some problems that occor with the new version
+these problems is what we call regression errors and theyre what regression testing targets and tries to eliminate before the new version of the software is released into the world
+another type of classic mistakes are processrelated mistakes
+and also in this case these kind of mistakes can be due to many reasons
+and they are of many types
+one typical example are scheduling issues which are due to the fact of being unable to come up with a realistic schedule
+so to have an overly optimistic schedule
+and this can be because we underestimate the effort involved in different parts of the project
+because we overestimate the ability of the people involved
+because we overestimate the importance for example of the use of tools
+but no matter what the reason is the result is typically that the projects end up being late which is a very common situation
+so this is somehow related to planning
+and in general planning is a fundamental factor in software processes and in software development
+mistakes in planning such as insufficient planning or abandoning planning due to pressure usually lead inexorably to failure
+and speaking of failures often there are unforeseen failures
+such as failures on the constructors end for example that might lead to low quality or late deliverables which ultimately affects the downstream activities
+now lets discuss the next phase of software development which is software design
+software design is the phase where software requirements are analyzed in order to produce a description of the internal structure and organization of the system
+and this description will serve as the basis for the construction of the actual system
+traditionally the software design phase consists of a series of design activities
+which normally consists of the architectural design phase the abstract specification interface design component design data structure and algorithm design
+and notice that this is just a possible list of activities
+but you can also characterize design activities in many different ways
+and if youre looking at different books and different sources you might find different activities described
+but the core idea the important point is that we go from sort of a highlevel view of the system which is the architectural design to a lowlevel view which is the algorithm design
+and these activities result in a set of design products which describe various characteristics of the system
+for example they describe the architecture of the system so how the system is decomposed and organized into components the interfaces between these components
+they also describe these components into a level of details that is suitable for allowing their construction
+we will discuss the details of software design and talk extensively about these different actives and these different products in the third mini course of this class
+okay
+now before we jump into the next topic i just want to take a very quick and simple quiz just to make sure that you guys paid attention to what i just discussed
+so i want to ask you what are the traditional software phases
+requirements engineering design abstraction implementation verification and validation
+or maybe design optimization implementation verification and validation and maintenance
+or requirements engineering design implementation verification and validation and maintenance
+there are two more software process models that i want to cover so bear with me
+the first one is the rational unified software process or iup which is s a very popular one based on uml
+rup works in an iterative way which means it that it performs different iterations
+and at each iteration it performs four phases
+so what im showing you here is a high level view of the process
+and i dont want you to focus on all the different details because we will discuss these details later on in a lesson that is actually dedicated to rup
+what i want to give you now is just the gist of how this works
+so in each one of these four phases which im going to describe in a second
+we perform standard software engineering activities the ones that we just discussed
+and we do them to different extent based on the phase in which we are
+in particular in the inception phase the work is mostly to sculpt the system
+so basically figuring out what is the scope of the work what is the scope of the project what is the domain
+so that we can be able to perform initial cost and budget estimates
+the operational phase is the phase in which we focus on the domain analysis and define the basic architecture for the system
+so this is a phase in which analysis and design are particularly paramount
+then there is a construction phase which is where the bulk of the development actually occurs
+and as you can see here is where most of the implementation happens
+and finally the transition phase is the phase in which the system goes from development into production so that it becomes available to users
+and of course this is the phase in which the other activities in software development become less relevant and deployment becomes the main one
+the next type of software process models that i want to discuss are agile software development processes
+and this is a group of software development methods that are based on highly iterative and incremental development
+and in particular im going to discuss test driven development or tdd
+the space on the iteration of three main phases
+in the first one that we mark as red we write test cases that encode our requirements and for which we havent written code yet
+and therefore they will fail obviously
+so were in this sort of red or fail phase
+from this phase we move to this phase in which after we write the just enough code to make the test cases pass
+we have a set of test cases that are all passing
+and therefore we can consider this as the green phase
+we had enough code to make the test cases pass because the test cases encode our requirements
+we have just written enough code to satisfy our requirements
+when we do this over time though what happens is that the structure of the code deteriorates because we keep adding pieces
+so thats why we have the first step which is refactoring
+in this step we modify the code and we will talk about refactoring extensively
+well devote one lesson to it
+we modify the code to make it more readable more maintainable
+in general we modify to improve the design of the code
+and after this phase we will go back to writing more test cases for new requirements write code that makes these test cases pass and so on
+so well continue to iterate among these phases
+and also in this case we will talk about agile software processes
+and in particular about extreme programming or xp and scrum in more details in minor course number four
+as we just heard from professor bohem software engineering is an important and critical discipline concerned with cost effective software development
+we also heard that this is based on a systematic approach that uses appropriate tools and techniques operates under specific development constraints
+and most importantly follows a process
+as we discussed in the previous lesson the software development process contains fundamental activities or phases
+since we will discuss several processes im going to remind you what these phases are
+we start with requirements engineering followed by design implementation verification and validation and finally maintenance
+note that we will revisit each of these phases and devote an entire lesson or more to each phase
+so what i want to do next is simply to give you a quick overview of what these phases are
+note also that for now i will follow a very traditional take on these topics
+later on in the class we will see how things can change and did change over the years
+the final type of classic mistakes that i want to mention are technology related mistakes
+one typical mistake in this context is the silverbullet syndrome
+what does that mean
+well the silverbullet syndrome refers to situations in which there is too much reliance on the advertised benefits of some previously unused technology
+for example a new technology
+and the problem here is that we cannot expect technology alone to solve our software development issues
+so we should not rely too much on technology alone
+another typical mistake is to switch or add tools in the middle of a project
+and sometimes it can make sense to upgrade a tool but introducing new tools which can have a steep learning curve has almost always negative effects
+finally a common unforgivable mistake is the lack of an automated version control system for your code and for your various artifacts
+manual and ad hoc solutions are just not an option
+it is way too easy to make mistakes use out of date versions be unable to find a previous working version and so on
+i saw that happening many times and it always results in a disaster
+so be warned use a version control system and an automated one
+and actually we will use version control systems in our projects
+hi in the last lesson we provided an overview of the course and motivated the need for software engineering
+in this lesson we will present and start discussing several traditional software engineering life cycle models
+we will talk about their main advantages and also about their shortcomings
+we will also talk about classic mistakes in software engineering that is well known ineffective development practices that when followed tend to lead to better results
+and covering those will hopefully help us to avoid them in the future
+and because in this lesson i will discuss some fundamental aspects of software engineering to suitably introduce these topics i went to the university of southern california to interview one of the fathers of software engineering professor barry boehm
+gtgt a well a software life cycle is a sequence of of decisions that you make and its fundamentally those decisions are going to be part of the history of the software that
+you are going to build that other people are going to use and the process model is basically answering the question of what do i do next and how long shall i do it for
+and again because there are a lot of different ways you can make that decision you need to figure out which models are good for which particular situations
+so for example weve written a book thats called balancing agility and discipline
+it says under what conditions should you use agile methods under which conditions should you invest more time in analyzing the situation and planning what youre going to do and the like
+and so typically if the project is is small where its three to ten people agile works pretty well
+if its 300 people then i think we dont want to go that way
+if the affect of the defect is loss of comfort or limited funds then agile is fine but if it is a loss of life then you dont
+on the other hand if if you have a situation where you have lot of unpredictable change you really dont want to spend a lot of time writing plans and lots of documents
+in some cases you may have a project where you want to do waterfall in some parts and agile in others
+so these are the kind of things that that make the choice of life cycle process model very important and very interesting as a subject of research
+you probably got this one right
+the right answer is that this is a people mistake
+and despite the fact that this is an easy answer i just want to make sure to stress once more
+because this is a very classic mistake
+and one that can have dire consequences
+you should never add people to a late project
+because in 999 of the cases thats only going to make things worse
+why
+because these people have to be brought up to speed and also because having more also makes the communication more difficult the meetings more difficult and so on
+so in short do not add people to a late project

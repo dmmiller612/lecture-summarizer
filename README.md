@@ -1,2 +1,3 @@
 # lecture-summarizer
-Lecture summarizer
+
+This project is a lecture summarizer.

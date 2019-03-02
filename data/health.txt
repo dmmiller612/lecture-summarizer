@@ -1,0 +1,316 @@
+dr karen bell is the chair of the certification commission for health information technology cchit which is a not for profit hit certification body with an educational mission
+in a june 2013 post on the health affairs blog dr bell said that models such as a acos must successfully implement seven business processes all of which rely heavily on the proper use of health informatics
+the seven processes are care coordination cohort management patient relationship management clinician engagement financial management reporting and knowledge management
+to support this she lists four primary requirements of an aco hit infrastructure
+the first demands the ability to share health information between and among various internal and external providers patients and their designated caregivers
+second there needs to be data integration from clinical administrative financial and patient derived sources
+the third requires attention to hit functions that support patient safety
+the fourth requires strong privacy and security protections
+most health care organizations have a lot of work to do in order to achieve all of this
+earlier in her post dr bell says that quote the promise of accountable care is tempered by a dearth of experience with care process redesign and culture change and of knowledge about the health information technology infrastructure necessary to optimally support healthcare transformation end quote
+to summarize the need for health it to support new care and payment models is clear but we still have a long way to go to develop and properly use those systems
+next we turn to some of the key challenges to doing that
+im james c cox
+im the noah langdale jr
+chair in economics the georgia research alliance eminent scholar and director of the experimental economic center at georgia state university
+im an experimental and behavioral economist which if you wondered what does an economist have to do with actual delivery of healthcare
+the words experimental and behavioral are the keys
+because the centers of my areas of expertise are how people respond to incentives and use information in making decisions and how one can design mechanisms to help them improve the decisions that they make
+in this case the problem to be addressed is not lack of information
+physicians are overwhelmed with information and the problem we face is how to use it
+where my team at the experimental economic center comes in is to start with a large sample of the identified patient records do an analysis of that data to try and find the predictors of unsuccessful and successful discharge from the hospital and then build on that a clinical decision support system with user friendly displays that can aid the physicians in making better decisions
+first of all the economist did the data analysis and then my it
+staff design the original cdss that we used in experiments here at emory
+we ran experiments with both resident physicians and fourth year medical students
+initially they were making decisions about virtual patients being represented by computers for trained data of real patients
+we later did an experiment where we had patient actors called standardized patients
+there were two sources of information which was the cdss and the behavior of these standardized patients and this is the last step before being ready to go out on the patient wards with an intervention
+getting prepared to go take that last step onto the patient wards is where we encountered really serious problems
+because at that point we needed a version of the cd ss that can interact with electronic health records in real time
+when we started to try and take that step we ran into very severe obstacles because you can imagine protecting patient information is a central concern and we were asking for twoway communication
+at that point both cerner corporation and emory it
+essentially balked
+we were in near despair in not being able to get cooperation from cerner and emory it
+in trying to make the next step in getting out of the laboratory and onto the patient wards
+we had a meeting here at emory with the new director of emory it
+and he made us aware of the fire standards and he invited mark grunstein to come who said to us well youve hit a brick wall but i know how to get through that brick wall
+and it is using fire compliance which is forthcoming
+and he provided to us the information we needed for the path forward and also provided a path to start to walk down that path through the projects that his class teams could do for us
+we were enthusiastic about learning about that path and having that opportunity to start walking down that path
+one of the project teams working on an initial version of the app produced some alternative very nice displays of the information and this is critical because for the cds to have value it has to have two properties
+one is it makes correct predictions about probability of readmission of a patient if you discharge them on any given day
+but the other thing it needs to do is to present the information in a userfriendly way
+so heres what in principle the problem to be solved
+the underlying model looks at each patient as though as an individual patient that comes from a population of a very large sample for which we know the outcomes of previous decisions where a patient that looks like your individual patient today out of a very large sample of 30 or 40 thousand patients
+if you discharge your patients today do they look statistically more like ones who it was unsuccessful and they were readmitted or it was successful and they were not
+the critical thing then is not only to have the underlying correct predictions but to display them in a way that the physicians will actually find it easy to use
+and one of the class teams produce these beautiful information displays and there are two of them
+one of them presents the information and is like rectangular block format another in a beautiful circular format
+but the nature of the information displayed is in the lower left hand corner of the display is something that shows the probabilities of readmission for patients and itll show the time sequence from the first day your patient was in the hospital up to the current day
+it displays the point estimate of the probability of readmission unplanned readmission if you discharge them today and the 80 error bounds
+the center of the display shows all of the variables in the patients record including labs vitals all the information and those displays are color coded
+and the color coding represents the marginal significance on probability of readmission of each of those individual variables
+the user then can click on any one of those variable names in the central display and that will open up on the right side of the screen
+the detailed information on that individual variable for your patient including how it varied from the day admission up to the current day and how that time path of those readings compares to the normal range of that particular variable
+a large part of kaisers success is because its concentrated in a few areas where it has the market presence to own and operate all or most of its facilities and employ its physicians
+can smaller care organizations deliver the kind of care that kaiser provides
+many feel the patientcentered medical home or pcmh provides for this
+the concept dates to the early 1960s
+in fact i worked in an early example of the pcmh where i oversaw the development of one of the first electronic medical records systems starting around 1970
+the pcmh model is advocated by the american college of physicians or acp which is the professional organization for internal medicine doctors
+its also supported by the american academy of family physicians or aafp the other large professional association of primary care physicians
+this is because their members are the doctors on the front lines of managing chronic disease
+the acp describes the pcmh as a care delivery model whereby patient treatment is coordinated through their primary care physician to ensure they receive the necessary care when and where they need it in a manner they can understand
+the objective is to have a centralized setting that facilitates partnerships between individual patients and their personal physicians and when appropriate for patients family
+care is facilitated by registries information technology health information exchange and other means to assure that patients get the indicated care when and where they need and want it in a culturally and linguistically appropriate manner
+note again in this graphic from the aafp the emphasis is on providing all needed care and using information technology to manage that
+the kaiser family foundation is a nonprofit organization focusing on national health issues as well as the us role in global health policy
+this 2013 kaiser family foundation data shows that uninsured people receive substantially less healthcare than the insured
+this 2015 data shows that the uninsured are likely to have no regular source of care to postpone or do without needed care or to postpone or not get needed prescriptions due to cost
+kaiser family foundation goes on to say that insured and uninsured people who are injured or newly diagnosed with a chronic condition such as diabetes or hypertension receive similar plans for followup care from their physician
+people without health coverage are less likely to obtain all the recommended services than those with coverage
+finally because the uninsured are less likely to have regular outpatient care they are more likely to end up with expensive hospitalizations for avoidable health problems and to experienced declines in their overall health
+when hospitalized uninsured people receive fewer diagnostic and therapeutic services and have higher mortality rates than those with insurance
+im john sweeney
+im the joseph brown whitehead professor of surgery and chairman of the department of surgery for the emory university school of medicine
+muscle insertion and chief emory health care
+we became interested in this problem in about 2009 2010 and it was based on a landmark paper that was published in new england journal of medicine in 2007
+in that paper the authors found that medicare patients discharged from the hospital we were readmitted an enormous number almost 20 of those patients
+and within 30 days after discharge the cost to the health care system was in the billions of dollars
+and so it was creating a significant amount of interest at the federal level
+and as part of the patient protection affordable care act section 1324 which is the readmission reduction act was signed into law which penalizes hospitals that have access readmission rates over whats expected
+and so this has become a substantial problem and generated substantial focus for hospitals around the country to reduce their readmission rates and improve outcomes for their patients
+its an interesting problem
+as we started looking at the readmission problem we realized that there were several factors at play that needed to be considered not just the simple readmission
+the first was the decision to send the patient home
+one was the patient ready to be discharged
+and keeping in mind with that that the longer patient stays in the hospital the higher the costs associated with that
+and so our doctors are incentivized to reduce costs and move patients through the hospital care segment
+if they move too quickly patients could potentially be readmitted
+and so we felt that the tool that brought information to bear that help providers make timely decisions that were more effective and reduce readmission rates really could make a huge difference in the outcomes for patients but also decrease costs for health care system
+i am a practicing general surgeon
+i do complex general surgery and so because my interest is in that area and patients that undergo complex general surgery can have readmission rates as high as 20 we initially focused on a large dataset of patients here at emory university hospital that had previously undergone complex gi surgery
+and we looked at readmissions in those patients and with the help of the economists working at georgia state built a predictive model that helped us with more likely predicting one it was the appropriate time to send a patient home from the hospital
+we then took that tool into the simulated setting and actually both using a computer simulation setting and also mock patient actors in a simulation setting here in the emory center for experiential learning
+we actually showed that this tool does have benefit and we think that in the true clinical setting would lead to reduce readmissions decreased like this day and improve outcomes overall for our patients
+the big issue for us now is as weve put a considerable amount of work into developing what we think is something that could have some significant benefit at the bedside as how to be able to integrate an electronic record with this decision support tool and really firers the mechanism for doing that
+its the opportunity thats going to allow us to bring to bear what weve spent a lot of time working on and what we think is going to make a difference for patients
+and also make the decision making process easier for provider
+the future of our tool i think is the next step is going to be a clinical trial with the tool and the clinical arena
+weve already shown the utility both in the computer simulated setting as well as in a mock patient setting
+but in reality what needs to happen next is this tool needs to be trialled in the clinical setting to demonstrate its utility
+the risks of readmission and the impacts of a readmission as well as the impacts of a prolonged length of stay are significant
+and therefore we think that this needs to be trialled in a controlled setting before turn loose on the healthcare environment
+lets talk about wasteful spending
+i should say at the outset that this is an understandably contentious issue
+as you can see here the iom has identified sources of waste and says that in aggregate they account for around 30 of all us health care spending
+a ratio that has remained unchanged for decades
+the widely respected journal health affairs breaks wasteful spending into multiple categories
+first are failures of care delivery
+this refers to poor execution or failure to adopt best practices such as for effective preventive care or patient safety
+second our failures of care coordination
+this means fragmented and disjointed care such as when patients move from one care setting to another called transitions of care
+peer coordination turns out to be a major use case for health informatics
+third is over treatment
+here that ignores scientific evidence
+this complex area includes defensive medicine done to avoid lawsuits
+as well as the use of higher price services that have negligible or no health benefits over less expensive alternatives
+this is another major use case for informatics
+specifically clinical decision support
+you should read the health affairs paper for a more detailed discussion
+fourth is administrative complexity
+this is excess spending because payers our regulatory agencies create inefficient or flawed rules and overly bureaucratic procedures
+as i alluded to earlier i believe the multiplicity of insurance plans and government programs here in the us adds to these costs
+fifth is pricing failure
+this is when the price of a service exceeds that found in a properly functioning marketplace which would expect to be equal to the actual costs of production plus a reasonable profit
+for example here in the us pharmaceutical costs are significantly higher than in other countries
+surprisingly by law medicare is prohibited from negotiating with pharmaceutical companies to get the best possible prices
+last are fraud and abuse
+in addition to the cost of the fraud itself
+this includes the cost of additional inspections and regulations to catch wrongdoing
+earlier we said that while the us excels in high technology care our overall health care quality efficiency and safety results are poor
+in large part this is because most health care costs are due to the incurable lifelong chronic diseases that our health care system is not designed to treat
+patients with multiple chronic diseases account disproportionately for those costs
+heres the opening paragraph of a 2004 paper in public health reports that i strongly recommend you read
+quote in 2000 approximately 125 million americans 45 of the population had chronic conditions and 61 million 21 of the population had multiple chronic conditions
+the number of people with chronic conditions is projected to increase steadily over the next 30 years
+while current health care financing and delivery systems were designed primarily to treat acute conditions 78 of health spending is devoted to people with chronic conditions
+quality medical care for people with chronic conditions requires a new orientation toward prevention of chronic disease and provision of ongoing care in care management to maintain their health status and functioning
+specific focus should be applied to people with multiple chronic conditions
+end quote
+the paper then goes on to describe the care of those patients saying quote while the average medicare beneficiary sees between six and seven different physicians beneficiaries with five or more chronic conditions see almost 14 different physicians in a year an average 37 physician visits annually
+people with five or more chronic conditions fill almost 50 prescriptions in a year
+this stunning fragmentation of the care of the people who drive most health care costs is the central rationale for interoperability
+this is so key that ill now interview one of the authors of that paper dr jared anderson of the bloomberg school of public health at johns hopkins
+so far weve talked mostly about the role of health informatics to improve the delivery of care
+what about its role in ensuring we deliver the right care to every patient every time
+this is a major concern of the academy of medicine which is the new name for the institute of medicine
+it recognizes that we are entering a new era of medical science that offers the prospect of personalized health care
+it also recognizes that physicians and patients must deal with an increasingly complex array of health care options and decisions and they need help to choose wisely
+that help in turn may require new knowledge about what works and when and for whom it works
+to achieve that years ago iom called for a learning health care system
+that it describes as a sustainable system that gets the right care for people when they need it and then captures the results for further improvement
+in simple terms we need to gather data from care already delivered aggregated and analyze it to learn from the collective results of many care representatives
+we need a feedback cycle
+are there examples of a better approach
+yes
+earlier i mentioned health maintenance organizations
+and well now look at the oldest
+kaiser permanente was founded in 1945 by industrialists henry j kaiser and physician sidney r garfield
+edgar kaiser famously described its economic model as the less kaiser does for patients the more money it makes
+this is because kaiser offers a prepaid plan to employers
+kaiser agrees to provide all needed care for a fixed amount per year
+the history actually dates to 1933 when garfield opened the contractors general hospital with 12 beds to treat construction workers building the los angeles aqueduct in the mojave desert
+the hospital was in a precarious financial state
+fueled by garfields desire to treat all patients regardless of their ability to pay
+harold hatch an insurance agent proposed that the insurance companies pay the hospital a total amount in advance for each worker covered
+the financial relationship between the insurance companies and the hospital was efficient and allowed garfield to focus on a new idea preventative health care
+this is the first key takeaway
+when the health care economic model provides the right incentives the focus shifts to preventive care in order to avoid costs
+kaiser is also a leader in care coordination and population health two key strategies for managing chronic disease that well discuss later on
+to support these strategies kaiser has also been a leader in the use of information technology
+himss is a large notforprofit organization focused on better health through information technology
+its annual meeting is by far the largest event in the field
+in 2009 kaiser received the first ever stage 7 award
+this is himss highest level of recognition for an environment where paper charts are no longer used
+thats the second key takeaway
+a care models that work best for chronic disease rest on the use of information technology
+kaisers done well
+and today it employs 186000 staff and over 18000 physicians to serve over 10 million patients in these areas
+prior to world war ii us patients paid for most healthcare which was relatively inexpensive until the beginning of high tech medicine in the 1970s
+after the war the us economy experienced explosive growth and employers were competing for workers
+health insurance became an attractive but inexpensive employee benefit
+in the early 1960s the federal government created two major new health insurance programs medicare for citizens over 65 and medicaid primarily for the poor and those with certain disabilities
+this graphic from the california health care foundation shows our complex mixture of payment sources the contributions of which vary with the kind of care
+until quite recently most payments for health care services were pay for procedures where in simple terms individual providers and hospitals are paid on the basis of how much care they deliver
+earlier we mentioned that healthcare in the us was traditionally charged based on the amount of care that was delivered
+this is usually termed pay for procedures
+hmos are an example of an alternate model in which there is fixed reimbursement
+so if kaiser spends less than its premium income it makes a profit
+in fact like most nonprofits kaiser still needs earnings to invest in its business
+however this relies on kaiser employing all the physicians owning all the hospitals and more
+can we create something similar on a much smaller scale using physicians hospitals and other community health resources that are already in place
+in 2006 dartmouth professor elliott s fisher first used the term accountable care organization to describe such a proposed solution
+the details are complex but the basic idea is to create a financial model under which existing community providers can organize and deliver care in a way that improves the quality and lowers the cost of care by fostering greater accountability on the part of the providers for their performance
+one of the key provisions of the obama administrations affordable care act was the creation of acos within medicare
+this model is also now widely advocated by commercial health insurance companies
+americans often hear that we have the worlds best healthcare system
+this is dr brant james a distinguished expert on healthcare quality at intermountain healthcare which is widely regarded as one of the premier healthcare delivery systems in the united states
+years ago he gave me the data for this graphic that shows that the us has the lowest mortality rates for high technology medicine the kind of care you need after a heart attack or major trauma
+thats the positive part of the story
+a commonwealth fund is a private foundation that promotes a high performing healthcare system particularly for our most vulnerable citizens
+this graphic from its international research program shows that while the us spends around twice as much per capita on healthcare as six other industrialized nations
+our overall rank is at the bottom on quality access efficiency and equity of care
+our citizens also rank at the bottom with respect to living long healthy productive lives
+next were going to travel all the way to baltimore to the johns hopkins bloomberg school of public health to speak with dr gerard anderson a professor there and the first author of the paper i cite more than any other during this course the rising tide of chronic disease in america
+well gerard thank you so much for being with us today
+its a thrill to meet you
+im glad to be here
+great
+a decade ago you and your colleague jane horvath published what i view as a seminal paper the growing burden of chronic disease in america
+the students of the course if theyve been paying attention are quite familiar with it by now
+and it opened my mind to the aggregate problem of chronic disease in a way that really no previous paper had done
+which is why i view it the way i do
+so were 10 years later
+have we made progress
+where are we
+well we have made progress
+i mean i think what you knew already is that as you saw patients that had chronic disease but you didnt know how many patients there were and now we know that there are 150 million americans almost one out of every two americans that have one or more chronic conditions
+and that is sort of the new information that we were trying to bring 10 years ago
+now what were trying to do now that we have the attention of the policymakers is to start changing the delivery system
+that starts with prevention but it goes to care and cure for these chronic conditions and there were making a lot less progress
+i was more optimistic 10 years ago than i am now
+most everything that weve tried recently has just not worked very well
+well here in the last few years weve tried to make the healthcare industry adopt health it and weve tried to create health information exchanges
+were still really early in that
+but are you optimistic that that will happen and that it will make a difference
+well it is happening so im very optimistic that it will happen
+what i dont think weve solved very well so far is that dashboard problem of a doctor
+i have 10 minutes to take care of a patient and she has seven things wrong with her shes seeing nine other doctors and i have 10 minutes
+if i spend most of that time looking at her medical record i now have five minutes to talk to her
+and so the challenge is how can we get that information out to the physician in a timely fashion for that complex patient
+for the patient who only has diabetes its pretty easy
+but for that patient who has diabetes and congestive heart failure and beginning alzheimers and arthritis and is seeing all these different doctors and taking lots of different medications thats the challenge
+i hope the students remember that comment because thats basically what were going to talk about in lesson six of the course
+great
+well you also mentioned incentives
+i mean clearly the healthcare system has never been incented
+do you see that working
+are you optimistic that thats actually going to happen in this endlessly complex adaptive health care system
+so i was just amazed when i started this work in the 1990s that australia had tried care coordination programs and they had and all failed
+and then i said but the united states can do it differently or the uk could do it differently
+and so ive been looking around the world for those models and i just dont see them yet
+i mean its just sort of we know what we need to do which is to get everybody on the same team probably with a nurse practitioner talking to all the doctors but we havent been able to figure it out
+so most all of the demonstrations that weve tried both in the public sector and the private sector just havent been able to save money reduce improve outcomes and improve satisfaction
+we just dont have very many of those things that hit all three of them very well
+and were still working and so im optimistic that we will find it but so far we just havent been very successful
+well your paper actually ends on an optimistic note
+you point to the reengineering the healthcare system a century ago around new knowledge in public health
+is it so fundamentally different now that that optimism may be misplaced
+no but i think if you read it a little more carefully what youll see is i said we moved in 50 years from a system oriented around infectious disease to one thats oriented on acute illnesses
+and then we got that done by about 2000
+and i said it is going to take us 50 years to reorient the healthcare system around chronic disease
+we have to start with the evidence base we have to know how to take care of somebody who has seven things wrong with her when the nih and the fda exclude all those people from clinical trials
+we dont have the educational system and the medical schools oriented around that
+we dont have the financing and so right now there isnt a real strong incentive for hospitals and doctors to really go after these people to take care of them in an effective way
+in fact because they dont know how to do it they want to run away from them in most cases
+but this is where the money is
+twothirds of medicare spending is by people with five or more chronic conditions
+weve got to get the system right for these people we just dont know how to do it yet
+so i cant speak to 50 years ago but 40 years ago i was a medical student
+first getting interested in this
+and i remember going to meetings and they would say well heres where we are and if these trends continue and we dont do anything by right about now health care will be consuming 20 of the gross domestic product a number thats absolutely not sustainable
+right
+now ive seen projections from omb and others that if we dont do anything it will be 40 in 50 years
+do we have 50 years
+well when i started working and trying to control health care costs in the 1970s i said well never be able to sustain 10 of gdp on healthcare now its close to 20
+so ive stopped making projections as to whether or not we can afford to do something
+what we know is that by the time it gets to almost 30 which isnt that far along almost all the growth in the economy all the productivity growth in the economy will in fact go to support the growth in healthcare and thats probably not sustainable
+but we dont know whats going to turn the ship around maybe its it maybe its changing the financial incentives but since everybody is making so much money in healthcare and you know jobs are important and financial security is important its going to be a really tough change
+so many of us speculate that eventually with our backs against the wall well adopt a single payer system like every other country on earth
+you think thats going to happen here in the us
+i was more optimistic in the 90s than i am today
+basically americans love choice
+all you have to do is go to a grocery store and go down the cereal aisle and look at 40 to 100 different choices of cereal whereas if you go to france youll see two or three in most cases
+choice is what makes america and is going to be really hard to get the private insurance industry out of it
+we cant even get right now many of the states to embrace medicaid so if they cant embrace medicaid which is free money to them why would we think that they would go to a single payer
+i mean i think it makes sense
+it means that we pay a lot more for healthcare than other industrialized countries because of this choice but america seems to really like choice
+well thank you very much
+its been a pleasure
+thank you
+maybe well be able to get together 10 more years and see whats happened
+i hopefully it will be more optimistic that time
+lack of health insurance can increase health care costs
+this map shows that other than the us virtually all developed nations have universal health care that covers everyone
+the affordable care acts major coverage provisions went into effect in january 2014 and have led to significant coverage gains but as of the end of 2016 estimates were that around 30 million americans were still uninsured
+the institute of medicine widely referred to as the iom is the health care arm of the national academy of science which was founded in 1863 under president lincoln
+according to the iom the uninsured on average use less health care than do insured persons and members of fully insured families
+thats lost utilization may be hidden from view but it can prove costly in terms of subs with ill health disability and premature death
+as shown in this graphic there are at least three key informatics challenges to overcome in order to achieve a learning health care system
+first providers must adopt digital records
+second no systems must be able to share data a characteristic called interoperability
+and third that shared data must be aggregated analyzed and presented in a clinically useful and timely manner
+because of the federal governments high tech program that well discuss in the next lesson adoption is now a largely solved challenge
+much of the excitement about fire rests on its apparent ability to help overcome the interoperability challenge
+fire apps offer the prospect of solving the problem of timely and useful presentation of the results of the new knowledge gleaned from analysis of past care to busy physicians
+here again economics plays a key role
+if providers have an incentive to get it right and do that efficiently then theyll be interested in creating a learning health care system because they can more clearly see how they benefit from it
+well now consider one example when to discharge a patient after surgery
+in this lesson were going to talk about the us healthcare system
+this is a complex topic that cannot be adequately covered in a single lecture
+so ive provided suggested readings
+some students wonder why i devote an entire lesson to the us health care systems structure and economics in what is after all a health informatics course
+many georgia tech students come to this course with little background in the health care delivery system
+health informatics the focus of this course is the application of information technology to that delivery system
+i believe you need at least a basic grounding to appreciate the nature of the system and the key roles health informatics can play in solving its problems
+to give some examples informatics can help avoid medical errors that often arise from inadequate information or the presence of more information than a human being can process
+it can help identifying reduce waste to unnecessary or duplicative services
+it is critical to the surveillance of food borne analysis and disease outbreaks
+data mining and many analytic techniques are increasingly being used to find new medicines new treatment protocols and new methods for earlier diagnosis
+these are just a few of the potential informatics benefits to health care delivery
+but each of them depends to one degree or another on the ability to share digital data
+as youll see now that most hospitals and around half of all providers have adopted electronic record systems data sharing and interoperability is now the focus
+so this course is largely about interoperability and the role that the new hl seven fire standard plays in creating it
+to get ready for that well first discuss the us healthcare system and its problems
+and then well begin the discussion of the role in interoperable informatics landscape can play in solving them
