@@ -20,7 +20,7 @@ class BertSearcher(BertParent):
 
 class BertMatcher(BertParent):
 
-    def __init__(self, content, annoy_index, model_type, size):
+    def __init__(self, content, annoy_index, model_type='bert', size='large'):
         BertParent.__init__(self, model_type, size)
         self.annoy_index = annoy_index
         self.content = content

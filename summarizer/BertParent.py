@@ -15,7 +15,7 @@ class BertParent(object):
     }
 
     token_handler = {
-        'open_api': GPT2Tokenizer,
+        'openApi': GPT2Tokenizer,
         'bert': BertTokenizer
     }
 
@@ -33,30 +33,36 @@ class BertParent(object):
     vector_handler = {
         'base': {
             'bert': 768,
-            'openApi': 1024
+            'openApi': 768
         },
         'large': {
             'bert': 1024,
-            'openApi': 1024
+            'openApi': 768
         }
     }
 
     def __init__(self, model_type, size):
-        self.model = self.model_handler[model_type](self.size_handler[size, model_type])
-        self.tokenizer = self.token_handler[model_type](self.size_handler[size, model_type])
-        self.vector_size = self.vector_handler[model_type][self.size_handler[size, model_type]]
+        self.model = self.model_handler[model_type].from_pretrained(self.size_handler[size][model_type])
+        self.tokenizer = self.token_handler[model_type].from_pretrained(self.size_handler[size][model_type])
+        self.vector_size = self.vector_handler[size][model_type]
+        self.model_type = model_type
         self.model.eval()
 
     def tokenize_input(self, text):
-        tokenized_text = self.tokenizer.tokenize(text)
-        indexed_tokens = self.tokenizer.convert_tokens_to_ids(tokenized_text)
+        if self.model_type == 'openApi':
+            indexed_tokens = self.tokenizer.encode(text)
+        else:
+            tokenized_text = self.tokenizer.tokenize(text)
+            indexed_tokens = self.tokenizer.convert_tokens_to_ids(tokenized_text)
         return torch.tensor([indexed_tokens])
 
     def extract_embeddings(self, text, use_hidden=False, squeeze=False):
         tokens_tensor = self.tokenize_input(text)
         hidden_states, pooled = self.model(tokens_tensor)
         if use_hidden:
-            return hidden_states[-2].mean(dim=1)
+            pooled = hidden_states[-2].mean(dim=1)
+        if self.model_type == 'openApi':
+            pooled = hidden_states.mean(dim=1)
         if squeeze:
             return pooled.detach().numpy().squeeze()
         return pooled

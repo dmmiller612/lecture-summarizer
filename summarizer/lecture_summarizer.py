@@ -79,7 +79,7 @@ def text_rank(full_text):
 
 
 if __name__ == '__main__':
-    bert_handler = BertParent('bert', 'large')
+    bert_handler = BertParent('openApi', 'large')
     with open('data/sdp.txt', 'r') as f:
         content = f.readlines()
 
