@@ -1,53 +1,33 @@
-import torch
-from pytorch_pretrained_bert import BertTokenizer, BertModel
-import numpy as np
 from annoy import AnnoyIndex
+from summarizer.BertParent import BertParent
 
 
-class BertSearcher(object):
+class BertSearcher(BertParent):
 
-    def __init__(self, vocab='data/vocab.txt', model='bert-base-uncased', n_trees=50):
-        self.tokenizer = BertTokenizer.from_pretrained(vocab)
-        self.model = BertModel.from_pretrained(model)
+    def __init__(self, model_type='bert', size='large', n_trees=40):
+        BertParent.__init__(self, model_type, size)
         self.n_trees = n_trees
-        self.model.eval()
-
-    def tokenize_input(self, text):
-        tokenized_text = self.tokenizer.tokenize(text)
-        indexed_tokens = self.tokenizer.convert_tokens_to_ids(tokenized_text)
-        return torch.tensor([indexed_tokens])
 
     def index_items(self, contents):
-        t = AnnoyIndex(768, metric='angular')
-        for content_id, content in enumerate(contents):
-            token = self.tokenize_input(content)
-            hidden_states, pooled = self.model(token)
-            pooled = pooled.detach().numpy().squeeze()
+        t = AnnoyIndex(1024, metric='angular')
+        for content_id, c in enumerate(contents):
+            pooled = self.extract_embeddings(c, squeeze=True)
             t.add_item(content_id, pooled)
-
         t.build(self.n_trees)
         t.save('tree_builder')
         return t
 
 
-class BertMatcher(object):
+class BertMatcher(BertParent):
 
-    def __init__(self, content, annoy_index, vocab='data/vocab.txt', model='bert-base-uncased'):
-        self.tokenizer = BertTokenizer.from_pretrained(vocab)
-        self.model = BertModel.from_pretrained(model)
+    def __init__(self, content, annoy_index, model_type, size):
+        BertParent.__init__(self, model_type, size)
         self.annoy_index = annoy_index
         self.content = content
 
-    def tokenize_input(self, text):
-        tokenized_text = self.tokenizer.tokenize(text)
-        indexed_tokens = self.tokenizer.convert_tokens_to_ids(tokenized_text)
-        return torch.tensor([indexed_tokens])
-
     def process(self, user_input):
-        token = self.tokenize_input(user_input)
-        hidden_states, pooled = self.model(token)
-        pooled = pooled.detach().numpy().squeeze()
-        idx_dists = self.annoy_index.get_nns_by_vector(pooled, 3, include_distances=True)
+        pooled = self.extract_embeddings(user_input, squeeze=True)
+        idx_dists = self.annoy_index.get_nns_by_vector(pooled, 5, include_distances=True)
         return [{
             'sim': i[1],
             'data': self.content[i[0]],
@@ -56,14 +36,20 @@ class BertMatcher(object):
 
 
 if __name__ == '__main__':
+
     with open('data/sdp.txt', 'r') as f:
         content = f.readlines()
-    content = [c for c in content if len(c) > 20]
+    content = [c for c in content if len(c) > 80]
 
     t = BertSearcher().index_items(content)
-    #t = AnnoyIndex(768, metric='dot')
-    #t.load('tree_builder')
-    bert_matcher = BertMatcher(content, t).process("on the contrary if we choose the wrong model that can be a constant source of problems and ultimately it can make the project fail")
-    print(bert_matcher)
+    """
+    t = AnnoyIndex(1024)
+    t.load('tree_builder')
+    """
+    bert_matcher = BertMatcher(content, t)
+
+    while 1:
+        search_question = input("Ask a question: ")
+        print(bert_matcher.process(search_question))
 
 

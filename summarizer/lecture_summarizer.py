@@ -1,36 +1,10 @@
-import torch
-from pytorch_pretrained_bert import BertTokenizer, BertModel
 import numpy as np
 from sklearn.cluster import KMeans
 from sklearn.mixture import GaussianMixture
-from tqdm import tqdm
 from sklearn.decomposition import PCA
-
-
-class BertHandler(object):
-
-    def __init__(self, vocab='data/vocab.txt', model='bert-base-uncased'):
-        self.tokenizer = BertTokenizer.from_pretrained(vocab)
-        self.model = BertModel.from_pretrained(model)
-        self.model.eval()
-
-    def tokenize_input(self, text):
-        tokenized_text = self.tokenizer.tokenize(text)
-        indexed_tokens = self.tokenizer.convert_tokens_to_ids(tokenized_text)
-        return torch.tensor([indexed_tokens])
-
-    def extract_embeddings(self, text, use_hidden=False):
-        tokens_tensor = self.tokenize_input(text)
-        hidden_states, pooled = self.model(tokens_tensor)
-        if use_hidden:
-            return hidden_states[-2].mean(dim=1)
-        return pooled
-
-    def process_whole_lecture(self, content, use_hidden=False):
-        train_vec = np.zeros((len(content), 768))
-        for i, t in tqdm(enumerate(content)):
-            train_vec[i] = bert_handler.extract_embeddings(t, use_hidden).data.numpy()
-        return train_vec
+from gensim.summarization.summarizer import summarize
+from sklearn.cluster import AffinityPropagation
+from summarizer.BertParent import BertParent
 
 
 class ClusterFeatures(object):
@@ -45,6 +19,8 @@ class ClusterFeatures(object):
     def __get_model(self, k):
         if self.algorithm == 'gmm':
             return GaussianMixture(n_components=k)
+        if self.algorithm == 'affinity':
+            return AffinityPropagation()
         return KMeans(n_clusters=k)
 
     def __get_centroids(self, model):
@@ -56,18 +32,21 @@ class ClusterFeatures(object):
         centroid_min = 1e7
         cur_arg = -1
         args = {}
+        used_idx = []
         for j, centroid in enumerate(centroids):
             for i, feature in enumerate(self.features):
                 value = np.sum(np.abs(feature - centroid))
-                if value < centroid_min:
+                if value < centroid_min and i not in used_idx:
                     cur_arg = i
                     centroid_min= value
+            used_idx.append(cur_arg)
             args[j] = cur_arg
             centroid_min = 1e7
             cur_arg = -1
         return args
 
-    def cluster(self, k=8):
+    def cluster(self, ratio=0.1):
+        k = int(len(self.features) * ratio)
         model = self.__get_model(k).fit(self.features)
         centroids = self.__get_centroids(model)
         cluster_args = self.__find_closest_args(centroids)
@@ -75,15 +54,40 @@ class ClusterFeatures(object):
         return sorted_values
 
 
+class PostTextProcessor(object):
+
+    REMOVAL_WORDS = ['whereas', 'finally', 'or']
+
+    def __init__(self, results):
+        self.results = results
+
+    def process(self):
+        final_results = []
+        for result in self.results:
+            start = result.split(' ')
+            if start[0].lower() in self.REMOVAL_WORDS:
+                start.pop(0)
+            start = ''.join(start)
+            final_results.append(start)
+        return final_results
+
+
+def text_rank(full_text):
+    full_text = ''.join(full_text)
+    res = summarize(full_text)
+    return res.split('\n')
+
+
 if __name__ == '__main__':
-    bert_handler = BertHandler()
+    bert_handler = BertParent('bert', 'large')
     with open('data/sdp.txt', 'r') as f:
         content = f.readlines()
 
-    content = [c for c in content if len(c) > 60 and not c.startswith('but') and not c.startswith('and') and not c.__contains__('quiz')]
+    content = [c for c in content if len(c) > 60 and not c.startswith('but') and
+               not c.startswith('and') and not c.__contains__('quiz') and not c.startswith('or')]
 
-    train_vec = bert_handler.process_whole_lecture(content, True)
-    res = ClusterFeatures(train_vec, 'gmm', pca_k=50).cluster(4)
+    train_vec = bert_handler.create_matrix(content, False)
+    res = ClusterFeatures(train_vec, 'kmeans').cluster(0.1)
 
     results = []
     for j in res:
