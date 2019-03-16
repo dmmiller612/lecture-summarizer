@@ -1,0 +1,32 @@
+The most sophisticated form of HIE creates semantic interoperability, thereby bridging the many ways the same concepts can be expressed by providers and represented in EHRs and other clinical systems.
+This involves a complex process that maps external representations of clinical concepts to some standard developed or adopted by the HIE.
+The premier example of this here in the U.S. is the Indiana Health Information Exchange or IHIE, pronounced, "I-hi."
+It says it is the largest such organization in the country.
+This claim is easy to believe based on these participation statistics from the IHIE site.
+Here you see a high-level diagram of the IHIE technical architecture.
+The data governance box is where the curation of data occurs to establish semantic interoperability.
+Here on the right, you see that this governance enables a number of value-added services.
+These include the reporting of laboratory test results we discussed earlier and of the quality metrics that are increasingly required for providers under the new payment models we discussed in lesson one.
+The Regenstrief Institute in Indiana created the expensive and sophisticated technology used by IHIE.
+Support for that came from the Regenstrief Foundation, a philanthropic organization that describes its mission as, "To bring to the practice of medicine the most modern scientific advances from engineering, business and the social sciences; and to foster the rapid dissemination into medical practice of the new knowledge created by research."
+Absent such unfortunately rare funding source, this type of HIE is usually economically impossible to create.
+In the case of IHIE, as you see here, all the curated data is aggregated and stored centrally.
+This architecture is convenient for data governance, analysis and reporting.
+However, it makes buy-in difficult for organizations that might be leery of turning over their data and concerned about how it may be used and how their performance might look.
+Again, Indiana has a special case where, over the years, IHIE has gained the trust of the many care organizations we saw enumerated earlier.
+This level of trust in a shared, centralized architecture is rare.
+The concept of a federated HIE goes a long way toward resolving these concerns.
+In this model, the data stays at the source.
+There is a standard for queries and responses and, based on the query, participating organizations usually have the option of responding or not.
+In a federated model, either the nodes must translate their data into some standard response format or they must map their information into a standard data model usually stored in a separate server that can then serve to handle queries and responses.
+By far the most successful example of this is the Observational Medical Outcomes Partnership or OMOP and its OMOP data model.
+OMOP was created to enable active drug safety surveillance with government and pharmaceutical industry support.
+Here you can see its global reach.
+We built our Georgia Tech FHIR server using the OMOP data model.
+While we will not discuss it in any detail here, there's also a model that blends the centralized and federated approaches.
+In it, all data is stored centrally but in so-called data lockers that remain under the control of the entity that is the source of the data.
+That entity typically has the same control of the use of the data they would have in a federated model.
+Next, we will talk to my Georgia Tech colleague, Dr. Jon Duke, who came here from the Regenstrief Institue that created the technology used in the Indiana Health Information Exchange.
+Jon was also a founding member of the Observational Health Data Sciences and Informatics or OHDSI initiative that developed analytic tools for exploring data in the OMOP model.
+This example is a heat map showing the distribution of diagnoses in a population of synthetic patients on our Georgia Tech FHIR server.
+Population-level analysis is not supported by FHIR but might be in the future.

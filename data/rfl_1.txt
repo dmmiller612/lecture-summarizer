@@ -1,0 +1,49 @@
+ All right, so here is a rule we're going to call the TD (0) rule, which gives it a different name from TD (1).
+But eventually we're going to connect the zero and the one together.
+And the rule looks like this, not so unfamiliar looking.
+That the way we're going to compute our value estimate for the state that we just left, when we make a transition at epoch T for trajectory T, big T, is what the previous value was.
+Plus we're going to move a little bit in the direction with our learning rate toward what?
+Toward the reward that we observed, plus the discounted estimated value of the state that we ended up in, minus the estimated value of this state that we just left.
+So does this look familiar?
+It's got Vs, and rs, and Alphas is in it.
+And so- [CROSSTALK]  Well sure, all right, but let's maybe we can be a little more precise about this.
+So what would we expect this outcome to look like on average, right?
+So the thing that's random here, at least the way we've been talking about it is, if we were in some state St-1 and we make a transition, we don't know what state we're going to end up in.
+But there's some probabilities of those.
+So basically this update is being done more often in the states that we end up in more often, the more common Sts, and less often in the Sts that are less common, or less likely.
+And so really if we take the expectation of this, what is it going to look like?
+If we repeat this update over and over again, what we're really doing is sampling different possible St values, right?
+So really we're taking an expectation over what we get as the next state of the reward plus the discounted estimated value of that next state.
+That seems right, that's kind of what we want.
+Yeah, so this is exactly what the maximum likelihood estimate is supposed to be.
+As long as these probabilities for what the next state is going to be match what the data has shown so far as the transition to St.  Is that what that blue stuff above the equations is about?
+Yeah, so here's the idea, is that if we repeat this update rule on the finite data that we've got over and over and over again, then we're actually taking an average with respect to how often we've seen each of those transitions.
+So it really is computing the maximum likelihood estimate.
+So this does the right thing.
+Oh, okay.
+So that finite data thing's important because if we had infinite data, then everything would work.
+So right, in the infinite data case this is also true, but also TD(1) does the right thing in infinite data.
+Kind of everything does the right thing in infinite data.
+Yeah, everything's getting all averaged out, and it'll do the right thing.
+But here we've got a finite set of data so far.
+And the issue is that if we run our update rule over that data over and over and over again, then we're going to get the effect of having a maximum likelihood model.
+And that's not true of the outcome based model.
+Because in the data that we just saw where we were only saw one transition from S2 to anything else, we can run over that over and over and over again.
+But the estimate is not going to change, it's always going to be exactly that.
+Okay, that makes sense.
+Okay, sure, sure, I'll buy that.
+We can contrast this with the outcome based idea where we're not doing this sort of bootstrapping.
+We're not using the estimate that we've gotten at some other state.
+We actually use literally the reward sequence that we saw.
+And so as a result of that, if we've only seen a reward sequence once, like in the case of S2, repeating that update over and over again doesn't change anything.
+Right, sure, sure, right because the expectation is the expectation.
+Right, whereas in here, we're actually using the intermediate estimates that we've computed and refined on all the intermediate nodes.
+All the states that we've encountered along the way to improve our estimate of the value of every other state, right?
+So this kind of is more self consistent, right?
+It's actually kind of connecting the values of states to the other values of the states which is what you'd want.
+And this is more just literally using the experience that it saw and ignoring the fact that there's these intermediate states.
+Okay, well, when you put it that way, it makes it sound like you should always use TD(0) and never use TD(1).
+Yes, but that's oversimplifying.
+Okay, can you under-simplify it?
+[LAUGH] We'll get to that.
+Oh, okay, good, I look forward to it.

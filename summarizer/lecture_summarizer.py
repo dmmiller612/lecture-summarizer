@@ -5,6 +5,10 @@ from sklearn.decomposition import PCA
 from gensim.summarization.summarizer import summarize
 from sklearn.cluster import AffinityPropagation
 from summarizer.BertParent import BertParent
+import matplotlib
+matplotlib.use('TkAgg')
+import matplotlib.pyplot as plt
+
 
 
 class ClusterFeatures(object):
@@ -15,6 +19,7 @@ class ClusterFeatures(object):
         else:
             self.features = features
         self.algorithm = algorithm
+        self.pca_k = pca_k
 
     def __get_model(self, k):
         if self.algorithm == 'gmm':
@@ -53,6 +58,54 @@ class ClusterFeatures(object):
         sorted_values = sorted(cluster_args.values())
         return sorted_values
 
+    def create_plots(self, k=4, plot_location='./cool_model.png', title = ''):
+        if self.pca_k != 2:
+            raise RuntimeError("Must be dimension of 2")
+        model = self.__get_model(k)
+        model.fit(self.features)
+        y = model.predict(self.features)
+        plt.title(title)
+        plt.scatter(self.features[:, 0], self.features[:, 1], c=y, s=50, cmap='viridis')
+        centers = model.cluster_centers_
+        plt.scatter(centers[:, 0], centers[:, 1], c='black', s=200, alpha=0.5)
+        plt.savefig(plot_location)
+
+
+class LectureEnsembler(object):
+
+    def __init__(self, content):
+        self.gp2 = BertParent('openApi', 'large')
+        self.bert_model = BertParent('bert', 'large')
+        self.gp2_non_hidden = self.gp2.create_matrix(content)
+        self.bert_non_hidden = self.bert_model.create_matrix(content)
+        self.bert_hidden = self.bert_model.create_matrix(content, True)
+        self.content = content
+
+    def __vote(self, arg_list):
+        all_tally = {}
+        for args in arg_list:
+            for arg in args:
+                if arg in all_tally:
+                    all_tally[arg] += 1
+                else:
+                    all_tally[arg] = 1
+        to_return = {k: v for k, v in all_tally.items() if v > 1}
+        return to_return
+
+    def run_clusters(self, cluster_percentage=0.2):
+        bc_non_hidden_args = ClusterFeatures(self.bert_non_hidden).cluster(cluster_percentage)
+        bc_hidden_args = ClusterFeatures(self.bert_hidden).cluster(cluster_percentage)
+        gp2_non_hidden_args = ClusterFeatures(self.gp2_non_hidden).cluster(cluster_percentage)
+
+        votes = self.__vote([bc_non_hidden_args, bc_hidden_args, gp2_non_hidden_args])
+        sorted_keys = sorted(votes.keys())
+        if sorted_keys[0] != 0:
+            sorted_keys.insert(0, 0)
+        to_return = []
+        for key in sorted_keys:
+            to_return.append(key)
+        return to_return
+
 
 class PostTextProcessor(object):
 
@@ -79,15 +132,21 @@ def text_rank(full_text):
 
 
 if __name__ == '__main__':
-    bert_handler = BertParent('openApi', 'large')
-    with open('data/sdp.txt', 'r') as f:
+
+    with open('data/health_today_1.txt', 'r') as f:
         content = f.readlines()
 
-    content = [c for c in content if len(c) > 60 and not c.startswith('but') and
-               not c.startswith('and') and not c.__contains__('quiz') and not c.startswith('or')]
+    content = [c for c in content if len(c) > 80 and not c.lower().startswith('but') and
+               not c.lower().startswith('and')
+               and not c.lower().__contains__('quiz') and
+               not c.lower().startswith('or')]
 
-    train_vec = bert_handler.create_matrix(content, False)
-    res = ClusterFeatures(train_vec, 'kmeans').cluster(0.1)
+    bert_model = BertParent('openApi', 'large')
+    bert_hidden = bert_model.create_matrix(content)
+    bc_hidden_args = ClusterFeatures(bert_hidden, pca_k=2)\
+        .create_plots(4, 'model.png', 'IHI Lecture Sentences Clustered with OpenApi Features')
+
+    res = LectureEnsembler(content).run_clusters(0.2)
 
     results = []
     for j in res:

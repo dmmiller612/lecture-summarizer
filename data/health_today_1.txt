@@ -1,0 +1,36 @@
+ In 2013, Grahame Greive, the leader of the global HL7's FHIR effort, posted in reference to semantic interoperability quote, "Let's not pursue the holy grail right now."
+End quote.
+At present, FHIR does not attempt to address semantic interoperability in large part because of the additional complexity that would introduce to an already complex effort.
+I will give you a sense of that complexity here, but a complete treatment of the subject is well beyond the scope of this course.
+There are many strongly held points of view about the feasibility of semantic interoperability.
+There are also strong advocates for various approaches to a semantic interoperability standard.
+We will now discuss one of the latest approaches.
+The Clinical Information Modeling Initiative, or CIMI, is another HL7 working group conceived by the same fresh look task force that birth FHIR.
+Its mission is to improve the interoperability of healthcare systems through shared implementable clinical information models.
+The ultimate goal is semantic interoperability.
+It is important to understand that data exchange and the use of coding systems alone is insufficient to achieve semantic interoperability.
+There are many codes for lab test or clinical diagnosis.
+In the case of a lab test, codes could specifically indicate which of several available methods the lab used.
+And this could affect the interpretation of the result.
+Other codes might just indicate what kind of test produce the result.
+For a diagnosis, there can be many levels of coding detail and specificity.
+There can also be structural differences in coding systems.
+Providers can differ as to how and when they use these codes.
+Finally, as we will now discuss, multiple EHR is going to address the representation of the same clinical concept differently.
+Here's a simple illustration of the variability of representation and of the semantic interoperability problem CIMI is trying to solve.
+Three EHR systems represent the concept of suspected lung cancer differently.
+In the general practice EHR on the left, it is a compound construct created by combining three structured data elements.
+In the hospital EHR on the right, it's a single concept, but polyclinics EHR in the middle combines both approaches.
+There isn't a right or wrong way to do this, but three different ways in parallel makes it harder to aggregate the data meaningfully for analysis or to share it to coordinate care.
+among these three practices.
+Here, this CIMI graphic uses shapes to represent the different ways the three EHR systems represent this single clinical concept.
+For the purposes of illustration, we're assuming the blue hexagon, the approach used by the general practice EHR, is the preferred shape, and a hypothetical translation servers might put all the instances of this clinical finding into that shape.
+This is essentially a standard structure in which terms always go in the same place, somewhat like in the HL7 messages we discussed earlier.
+FHIR resources also provide a standard structure specifying where data elements are located.
+In that context, semantic interoperability specifies what formats and values to use in specific clinical scenarios often called use cases.
+As shown here in the most advanced CIMI proposed solution, data not only goes into a consistent location, but the terms are also translated into an agreed upon standard.
+Now, a hypothetical FHIR app gets the same structure and terms even though the source systems use different representations for both.
+As I mentioned earlier, semantic interoperability is difficult to achieve given the complexity of health care data, the many ways in which it is represented and the many contexts in which it is used.
+We will discuss FHIR profiles later, but they essentially constrain the standard for a particular use case, thus, they can specify the preferred shape.
+CIMI anticipates that its models will connect to an informed or constrained FHIR through model derived profiles.
+Next, we look at some exciting capabilities that might be practical given semantic interoperability.

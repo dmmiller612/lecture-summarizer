@@ -1,5 +1,7 @@
 from annoy import AnnoyIndex
 from summarizer.BertParent import BertParent
+import numpy as np
+from sklearn.decomposition import PCA
 
 
 class BertSearcher(BertParent):
@@ -8,8 +10,8 @@ class BertSearcher(BertParent):
         BertParent.__init__(self, model_type, size)
         self.n_trees = n_trees
 
-    def index_items(self, contents):
-        t = AnnoyIndex(1024, metric='angular')
+    def index_items(self, contents, use_pca=False):
+        t = AnnoyIndex(768, metric='angular')
         for content_id, c in enumerate(contents):
             pooled = self.extract_embeddings(c, squeeze=True)
             t.add_item(content_id, pooled)
@@ -24,9 +26,22 @@ class BertMatcher(BertParent):
         BertParent.__init__(self, model_type, size)
         self.annoy_index = annoy_index
         self.content = content
+        self.content_features = self.create_matrix(self.content, use_hidden=True)
+        self.pca = PCA(n_components=2).fit(self.content_features)
+
+    def scored(self, user_input):
+        pooled = self.extract_embeddings(user_input, use_hidden=True)
+        pooled = self.pca.transform(pooled.detach().numpy())
+        score = np.sum(pooled * self.pca.transform(self.content_features), axis=1)
+        topk_idx = np.argsort(score)[::-1][:5]
+        return [{
+            'data': self.content[i],
+            'idx': i
+        } for i in topk_idx]
 
     def process(self, user_input):
         pooled = self.extract_embeddings(user_input, squeeze=True)
+
         idx_dists = self.annoy_index.get_nns_by_vector(pooled, 5, include_distances=True)
         return [{
             'sim': i[1],
@@ -39,17 +54,17 @@ if __name__ == '__main__':
 
     with open('data/sdp.txt', 'r') as f:
         content = f.readlines()
-    content = [c for c in content if len(c) > 80]
+    content = [c for c in content if len(c) > 70]
 
-    t = BertSearcher().index_items(content)
+    #t = BertSearcher('openApi', 'base').index_items(content)
     """
     t = AnnoyIndex(1024)
     t.load('tree_builder')
     """
-    bert_matcher = BertMatcher(content, t)
+    bert_matcher = BertMatcher(content, None, 'bert', 'large')
 
     while 1:
         search_question = input("Ask a question: ")
-        print(bert_matcher.process(search_question))
+        print(bert_matcher.scored(search_question))
 
 

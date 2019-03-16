@@ -1,4 +1,4 @@
-from pytorch_pretrained_bert import BertTokenizer, BertModel, GPT2Model, GPT2Tokenizer
+from pytorch_pretrained_bert import BertTokenizer, BertModel, GPT2Model, GPT2Tokenizer, BertForQuestionAnswering
 import logging
 import torch
 import numpy as np
@@ -56,7 +56,7 @@ class BertParent(object):
             indexed_tokens = self.tokenizer.convert_tokens_to_ids(tokenized_text)
         return torch.tensor([indexed_tokens])
 
-    def extract_embeddings(self, text, use_hidden=False, squeeze=False):
+    def extract_embeddings(self, text, use_hidden=True, squeeze=False):
         tokens_tensor = self.tokenize_input(text)
         hidden_states, pooled = self.model(tokens_tensor)
         if use_hidden:

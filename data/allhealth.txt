@@ -1,0 +1,165 @@
+ Dr. Karen Bell is the chair of the Certification Commission for Health Information Technology, CCHIT, which is a not for profit HIT certification body with an educational mission.
+In a June 2013 post on the Health Affairs blog, Dr. Bell said that models such as a ACOs must successfully implement seven business processes, all of which rely heavily on the proper use of Health Informatics.
+The seven processes are: care coordination, cohort management, patient relationship management, clinician engagement, financial management, reporting, and knowledge management.
+To support this, she lists four primary requirements of an ACO HIT infrastructure.
+The first demands the ability to share health information between and among various internal and external providers, patients, and their designated caregivers.
+Second, there needs to be data integration from clinical, administrative, financial and patient derived sources.
+The third requires attention to HIT functions that support patient safety.
+The fourth requires strong privacy and security protections.
+Most health care organizations have a lot of work to do in order to achieve all of this.
+Earlier in her post, Dr. Bell says that quote, the promise of Accountable Care is tempered by a dearth of experience with care process redesign and culture change, and of knowledge about the health information technology infrastructure necessary to optimally support healthcare transformation, end quote.
+To summarize, the need for health IT to support new care and payment models is clear, but we still have a long way to go to develop and properly use those systems.
+Next we turn to some of the key challenges to doing that.
+ A large part of Kaiser's success is because it's concentrated in a few areas where it has the market presence to own and operate all, or most of its facilities and employ its physicians.
+Can smaller care organizations deliver the kind of care that Kaiser provides?
+Many feel the patient-centered medical home, or PCMH, provides for this.
+The concept dates to the early 1960s.
+In fact, I worked in an early example of the PCMH, where I oversaw the development of one of the first electronic medical records systems starting around 1970.
+The PCMH model is advocated by the American College of Physicians, or ACP, which is the professional organization for internal medicine doctors.
+It's also supported by the American Academy of Family Physicians, or AAFP, the other large professional association of primary care physicians.
+This is because their members are the doctors on the front lines of managing chronic disease.
+The ACP describes the PCMH as, "A care delivery model whereby patient treatment is coordinated through their primary care physician to ensure they receive the necessary care when and where they need it, in a manner they can understand."
+The objective is to have a centralized setting that facilitates partnerships between individual patients and their personal physicians, and when appropriate, for patients' family.
+Care is facilitated by registries, information technology, health information exchange, and other means to assure that patients get the indicated care, when and where they need and want it in a culturally and linguistically appropriate manner.
+Note again, in this graphic from the AAFP, the emphasis is on providing all needed care and using information technology to manage that.
+ The Kaiser Family Foundation is a nonprofit organization focusing on national health issues, as well as the U.S. role in global health policy.
+This 2013 Kaiser Family Foundation data shows that uninsured people receive substantially less healthcare than the insured.
+This 2015 data shows that the uninsured are likely to have no regular source of care, to postpone or do without needed care, or to postpone or not get needed prescriptions due to cost.
+Kaiser Family Foundation goes on to say that insured and uninsured people who are injured or newly diagnosed with a chronic condition, such as diabetes or hypertension, receive similar plans for follow-up care from their physician.
+People without health coverage are less likely to obtain all the recommended services than those with coverage.
+Finally, because the uninsured are less likely to have regular outpatient care, they are more likely to end up with expensive hospitalizations for avoidable health problems and to experienced declines in their overall health.
+When hospitalized, uninsured people receive fewer diagnostic and therapeutic services and have higher mortality rates than those with insurance.
+ Let's talk about wasteful spending.
+I should say at the outset, that this is an understandably contentious issue.
+As you can see here, the IOM has identified sources of waste, and says that in aggregate they account for around 30% of all U.S. health care spending.
+A ratio that has remained unchanged for decades.
+The widely respected journal Health Affairs, breaks wasteful spending into multiple categories.
+First, are failures of care delivery.
+This refers to poor execution or failure to adopt best practices, such as for effective preventive care or patient safety.
+Second, our failures of care coordination.
+This means fragmented and disjointed care, such as when patients move from one care setting to another called transitions of care.
+Peer coordination turns out to be a major use case for health informatics.
+Third, is over treatment.
+Here that ignores scientific evidence.
+This complex area includes defensive medicine done to avoid lawsuits.
+As well as the use of higher price services that have negligible or no health benefits over less expensive alternatives.
+This is another major use case for informatics.
+Specifically, clinical decision support.
+You should read the Health Affairs paper for a more detailed discussion.
+Fourth, is administrative complexity.
+This is excess spending because payers our regulatory agencies create inefficient or flawed rules and overly bureaucratic procedures.
+As I alluded to earlier, I believe the multiplicity of insurance plans and government programs here in the US adds to these costs.
+Fifth, is pricing failure.
+This is when the price of a service exceeds that found in a properly functioning marketplace which would expect to be equal to the actual costs of production plus a reasonable profit.
+For example, here in the US, pharmaceutical costs are significantly higher than in other countries.
+Surprisingly by law, Medicare is prohibited from negotiating with pharmaceutical companies to get the best possible prices.
+Last, are fraud and abuse.
+In addition to the cost of the fraud itself.
+This includes the cost of additional inspections and regulations to catch wrongdoing.
+ Earlier we said that while the U.S. excels in high technology care, our overall health care quality, efficiency, and safety results are poor.
+In large part, this is because most health care costs are due to the incurable, lifelong chronic diseases that our health care system is not designed to treat.
+Patients with multiple chronic diseases account disproportionately for those costs.
+Here's the opening paragraph of a 2004 paper in public health reports that I strongly recommend you read.
+Quote: In 2000, approximately 125 million Americans, 45% of the population, had chronic conditions, and 61 million, 21% of the population, had multiple chronic conditions.
+The number of people with chronic conditions is projected to increase steadily over the next 30 years.
+While current health care financing and delivery systems were designed primarily to treat acute conditions, 78% of health spending is devoted to people with chronic conditions.
+Quality medical care for people with chronic conditions requires a new orientation toward prevention of chronic disease and provision of ongoing care in care management to maintain their health status and functioning.
+Specific focus should be applied to people with multiple chronic conditions.
+End quote.
+The paper then goes on to describe the care of those patients saying, quote, while the average Medicare beneficiary sees between six and seven different physicians, beneficiaries with five or more chronic conditions see almost 14 different physicians in a year, an average 37 physician visits annually.
+People with five or more chronic conditions fill almost 50 prescriptions in a year.
+This stunning fragmentation of the care of the people who drive most health care costs is the central rationale for interoperability.
+This is so key that I'll now interview one of the authors of that paper Dr. Jared Anderson of the Bloomberg School of Public Health at Johns Hopkins.
+ So far we've talked mostly about the role of Health Informatics to improve the delivery of care.
+What about its role in ensuring we deliver the right care to every patient, every time?
+This is a major concern of the Academy of Medicine, which is the new name for the Institute of Medicine.
+It recognizes that we are entering a new era of medical science that offers the prospect of personalized health care.
+It also recognizes that physicians and patients must deal with an increasingly complex array of health care options and decisions, and they need help to choose wisely.
+That help in turn, may require new knowledge about what works and when and for whom it works.
+To achieve that, years ago IOM called for a learning health care system.
+That it describes as a sustainable system that gets the right care for people when they need it and then captures the results for further improvement.
+In simple terms, we need to gather data from care already delivered, aggregated, and analyze it to learn from the collective results of many care representatives.
+We need a feedback cycle.
+ Are there examples of a better approach?
+Yes.
+Earlier I mentioned health maintenance organizations.
+And we'll now look at the oldest.
+Kaiser Permanente was founded in 1945 by industrialists Henry J. Kaiser and physician Sidney R. Garfield.
+Edgar Kaiser famously described its economic model as "The less Kaiser does for patients, the more money it makes."
+This is because Kaiser offers a prepaid plan to employers.
+Kaiser agrees to provide all needed care for a fixed amount per year.
+The history actually dates to 1933, when Garfield opened the Contractors General Hospital with 12 beds to treat construction workers building the Los Angeles aqueduct in the Mojave Desert.
+The hospital was in a precarious financial state.
+Fueled by Garfield's desire to treat all patients regardless of their ability to pay.
+Harold Hatch, an insurance agent, proposed that the insurance companies pay the hospital a total amount in advance for each worker covered.
+The financial relationship between the insurance companies and the hospital was efficient and allowed Garfield to focus on a new idea, preventative health care.
+This is the first key takeaway.
+When the health care economic model provides the right incentives, the focus shifts to preventive care in order to avoid costs.
+Kaiser is also a leader in care coordination and population health, two key strategies for managing chronic disease that we'll discuss later on.
+To support these strategies, Kaiser has also been a leader in the use of information technology.
+HIMSS is a large, not-for-profit organization, focused on better health through information technology.
+Its annual meeting is by far, the largest event in the field.
+In 2009, Kaiser received the first ever Stage 7 award.
+This is HIMSS' highest level of recognition for an environment where paper charts are no longer used.
+That's the second key takeaway.
+A care models that work best for chronic disease rest on the use of information technology.
+Kaiser's done well.
+And today, it employs 186,000 staff and over 18,000 physicians to serve over 10 million patients in these areas.
+ Prior to World War II, U.S. patients paid for most healthcare which was relatively inexpensive, until the beginning of high tech medicine in the 1970s.
+After the war, the U.S. economy experienced explosive growth and employers were competing for workers.
+Health insurance became an attractive but inexpensive employee benefit.
+In the early 1960's, the Federal Government created two major new health insurance programs, Medicare for citizens over 65 and Medicaid primarily for the poor and those with certain disabilities.
+This graphic from the California Health Care Foundation, shows our complex mixture of payment sources, the contributions of which vary with the kind of care.
+Until quite recently, most payments for health care services were pay for procedures, where in simple terms, individual providers and hospitals are paid, on the basis of how much care they deliver.
+ Earlier we mentioned that healthcare in the US was traditionally charged based on the amount of care that was delivered.
+This is usually termed pay for procedures.
+HMOs are an example of an alternate model in which there is fixed reimbursement.
+So if Kaiser spends less than its premium income it makes a profit.
+In fact, like most nonprofits, Kaiser still needs earnings to invest in its business.
+However, this relies on Kaiser employing all the physicians, owning all the hospitals and more.
+Can we create something similar on a much smaller scale using physicians, hospitals, and other community health resources that are already in place?
+In 2006, Dartmouth professor, Elliott S. Fisher, first used the term accountable care organization to describe such a proposed solution.
+The details are complex but the basic idea is to create a financial model under which existing community providers can organize and deliver care in a way that improves the quality and lowers the cost of care by fostering greater accountability on the part of the providers for their performance.
+One of the key provisions of the Obama administration's Affordable Care Act was the creation of ACOs within Medicare.
+This model is also now widely advocated by commercial health insurance companies.
+ Americans often hear that we have the world's best healthcare system.
+This is Dr. Brant James a distinguished expert on healthcare quality at Intermountain Healthcare, which is widely regarded as one of the premier healthcare delivery systems in the United States.
+Years ago he gave me the data for this graphic that shows that the U.S. has the lowest mortality rates for high technology medicine, the kind of care you need after a heart attack or major trauma.
+That's the positive part of the story.
+A Commonwealth Fund is a private foundation that promotes a high performing healthcare system, particularly for our most vulnerable citizens.
+This graphic from its international research program shows that while the U.S. spends around twice as much per capita on healthcare as six other industrialized nations.
+Our overall rank is at the bottom on quality access efficiency and equity of care.
+Our citizens also rank at the bottom with respect to living long, healthy productive lives.
+ Lack of health insurance can increase health care costs.
+This map shows that other than the U.S. virtually all developed nations have universal health care that covers everyone.
+The Affordable Care Act's major coverage provisions went into effect in January 2014 and have led to significant coverage gains, but as of the end of 2016 estimates were that around 30 million Americans were still uninsured.
+The Institute of Medicine, widely referred to as the IOM, is the health care arm of the National Academy of Science, which was founded in 1863 under President Lincoln.
+According to the IOM the uninsured on average use less health care than do insured persons and members of fully insured families.
+That's lost utilization may be hidden from view, but it can prove costly in terms of subs with ill health disability and premature death.
+ As shown in this graphic, there are at least three key informatics challenges to overcome in order to achieve a learning health care system.
+First, providers must adopt digital records.
+Second, no systems must be able to share data a characteristic called interoperability.
+And third, that shared data must be aggregated, analyzed, and presented in a clinically useful and timely manner.
+Because of the federal government's high tech program, that we'll discuss in the next lesson, adoption is now a largely solved challenge.
+Much of the excitement about fire rests on its apparent ability to help overcome the interoperability challenge.
+Fire apps, offer the prospect of solving the problem of timely and useful presentation of the results of the new knowledge gleaned from analysis of past care to busy physicians.
+Here again, economics plays a key role.
+If providers have an incentive to get it right and do that efficiently, then they'll be interested in creating a learning health care system, because they can more clearly see how they benefit from it.
+Well, now consider one example, when to discharge a patient after surgery.
+ In this lesson, we're going to talk about the U.S. healthcare system.
+This is a complex topic that cannot be adequately covered in a single lecture.
+So, I've provided suggested readings.
+Some students wonder why I devote an entire lesson to the US health care systems structure and economics in what is after all, a health informatics course.
+Many Georgia Tech students come to this course with little background in the health care delivery system.
+Health Informatics, the focus of this course is the application of information technology to that delivery system.
+I believe you need at least a basic grounding to appreciate the nature of the system and the key roles Health Informatics can play in solving its problems.
+To give some examples, informatics can help avoid medical errors that often arise from inadequate information, or the presence of more information than a human being can process.
+It can help identifying reduce waste to unnecessary, or duplicative services.
+It is critical to the surveillance of food borne analysis and disease outbreaks.
+Data mining and many analytic techniques are increasingly being used to find new medicines, new treatment protocols, and new methods for earlier diagnosis.
+These are just a few of the potential informatics benefits to health care delivery.
+But each of them depends to one degree or another on the ability to share digital data.
+As you'll see, now that most hospitals and around half of all providers have adopted electronic record systems data sharing and interoperability is now the focus.
+So, this course is largely about interoperability and the role that the new HL seven fire standard plays in creating it.
+To get ready for that, we'll first discuss the US healthcare system and its problems.
+And then, we'll begin the discussion of the role in interoperable informatics landscape can play in solving them.
