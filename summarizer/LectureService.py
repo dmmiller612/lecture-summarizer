@@ -19,7 +19,7 @@ class LectureService(object):
         session.commit()
         return {"id": lecture.id}
 
-    def get_lecture(self, l_id) -> Dict[str, str]:
+    def get_lecture(self, l_id: int) -> Dict[str, str]:
         session = Engine.get_instance(self.memory_only).Session()
         query = session.query(Lecture).filter(Lecture.id == l_id)
         lecture: Lecture = query.first()
@@ -32,7 +32,7 @@ class LectureService(object):
             }
         return {}
 
-    def get_lectures(self, course, name, limit):
+    def get_lectures(self, course: str, name: str, limit: int) -> List[Dict[str, str]]:
         session = Engine.get_instance(self.memory_only).Session()
         query = session.query(Lecture)
         if course:
@@ -51,11 +51,11 @@ class LectureService(object):
             'content': lecture.content
         } for lecture in result]
 
-    def delete_lecture(self, l_id):
+    def delete_lecture(self, l_id: int) -> Dict[str, int]:
         session = Engine.get_instance(self.memory_only).Session()
         lecture = session.query(Lecture).filter(Lecture.id == l_id).first()
         if lecture:
             session.delete(lecture)
             session.commit()
             return {'id': l_id}
-        return None
+        return {}
