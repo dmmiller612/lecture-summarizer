@@ -1,3 +1,8 @@
+"""
+This code is an edited file for lectures from the run_squad script by hugging face here:
+https://github.com/huggingface/pytorch-pretrained-BERT/blob/master/examples/run_squad.py
+"""
+
 import uuid
 import collections
 import torch
