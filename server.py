@@ -2,6 +2,7 @@ from flask import Flask
 from flask import request, jsonify, abort, make_response
 from flask_cors import CORS
 from summarizer.LectureService import LectureService
+from summarizer.UdacityParser import UdacityParser
 
 app = Flask(__name__)
 CORS(app)
@@ -16,6 +17,14 @@ def validate_lecture(request):
         abort(make_response(jsonify(message="content must be supplied"), 400))
     if 'name' not in request or not request['name']:
         abort(make_response(jsonify(message="name must be supplied"), 400))
+
+
+@app.route('/udacity', methods=['POST'])
+def convert_udacity():
+    data = request.data
+    if not data:
+        abort(make_response(jsonify(message="Request must have raw text"), 400))
+    return jsonify(UdacityParser(data).convert_to_paragraphs())
 
 
 @app.route('/lectures', methods=['POST'])

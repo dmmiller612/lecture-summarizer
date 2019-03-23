@@ -3,9 +3,8 @@ from nltk import tokenize
 
 class UdacityParser(object):
 
-    def __init__(self, file_path):
-        with open(file_path) as d:
-            self.all_data = d.readlines()
+    def __init__(self, raw_text):
+        self.all_data = str(raw_text, 'utf-8').split('\n')
 
     def __isint(self, v):
         try:
@@ -34,3 +33,7 @@ class UdacityParser(object):
                 total += ' ' + cleaned
         sentences = self.__process_sentences(total)
         return sentences
+
+    def convert_to_paragraphs(self):
+        sentences = self.run()
+        return {"paragraph": ' '.join(sentences)}
