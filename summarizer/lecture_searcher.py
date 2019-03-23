@@ -27,12 +27,10 @@ class BertMatcher(BertParent):
         self.annoy_index = annoy_index
         self.content = content
         self.content_features = self.create_matrix(self.content, use_hidden=True)
-        self.pca = PCA(n_components=2).fit(self.content_features)
 
     def scored(self, user_input):
         pooled = self.extract_embeddings(user_input, use_hidden=True)
-        pooled = self.pca.transform(pooled.detach().numpy())
-        score = np.sum(pooled * self.pca.transform(self.content_features), axis=1)
+        score = np.sum(pooled * self.content_features, axis=1)
         topk_idx = np.argsort(score)[::-1][:5]
         return [{
             'data': self.content[i],

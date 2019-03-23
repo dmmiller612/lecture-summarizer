@@ -60,4 +60,3 @@ if __name__ == "__main__":
     convert_tf_checkpoint_to_pytorch(args.tf_checkpoint_path,
                                      args.bert_config_file,
                                      args.pytorch_dump_path)
-

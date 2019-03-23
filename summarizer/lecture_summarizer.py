@@ -10,7 +10,6 @@ matplotlib.use('TkAgg')
 import matplotlib.pyplot as plt
 
 
-
 class ClusterFeatures(object):
 
     def __init__(self, features, algorithm='kmeans', pca_k=None):
@@ -140,11 +139,6 @@ if __name__ == '__main__':
                not c.lower().startswith('and')
                and not c.lower().__contains__('quiz') and
                not c.lower().startswith('or')]
-
-    bert_model = BertParent('openApi', 'large')
-    bert_hidden = bert_model.create_matrix(content)
-    bc_hidden_args = ClusterFeatures(bert_hidden, pca_k=2)\
-        .create_plots(4, 'model.png', 'IHI Lecture Sentences Clustered with OpenApi Features')
 
     res = LectureEnsembler(content).run_clusters(0.2)
 
