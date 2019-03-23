@@ -9,13 +9,15 @@ class LectureService(object):
 
     def create_lecture(self, request_body: Dict[str, str]) -> Dict[str, str]:
         session = Engine.get_instance(self.memory_only).Session()
-        session.add(Lecture(
+        lecture = Lecture(
             name=request_body['name'],
             course=request_body['course'],
             content=request_body['content']
-        ))
+        )
+        session.add(lecture)
+        session.flush()
         session.commit()
-        return request_body
+        return {"id": lecture.id}
 
     def get_lecture(self, l_id) -> Dict[str, str]:
         session = Engine.get_instance(self.memory_only).Session()

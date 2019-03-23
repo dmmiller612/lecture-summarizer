@@ -20,13 +20,27 @@ def validate_lecture(request):
 
 @app.route('/lectures', methods=['POST'])
 def create():
-    validate_lecture(request)
-    return jsonify(lecture_service.create_lecture(request))
+    validate_lecture(request.json)
+    return jsonify(lecture_service.create_lecture(request.json))
+
+
+@app.route('/lectures/<lectureid>', methods=['GET'])
+def get_lecture(lectureid):
+    if lectureid is None:
+        abort(make_response(jsonify(message="you must supply a lecture id"), 400))
+    result = lecture_service.get_lecture(lectureid)
+    if result:
+        return jsonify(result)
+    abort(make_response(jsonify(message="lecture not found"), 404))
 
 
 @app.route('/')
 def index():
     return jsonify({"healthy": 200})
+
+
+if __name__ == '__main__':
+    app.run(host='0.0.0.0', port=5000)
 
 
 
