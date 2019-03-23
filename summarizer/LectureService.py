@@ -32,5 +32,30 @@ class LectureService(object):
             }
         return {}
 
-    def get_lectures(self, query_params):
+    def get_lectures(self, course, name, limit):
+        session = Engine.get_instance(self.memory_only).Session()
+        query = session.query(Lecture)
+        if course:
+            query = query.filter(Lecture.course == course)
+        if name:
+            query = query.filter(Lecture.name == name)
+
+        limit = limit if limit else 10
+        query = query.limit(limit)
+
+        result = query.all()
+        return [{
+            'id': lecture.id,
+            'name': lecture.name,
+            'course': lecture.course,
+            'content': lecture.content
+        } for lecture in result]
+
+    def delete_lecture(self, l_id):
+        session = Engine.get_instance(self.memory_only).Session()
+        lecture = session.query(Lecture).filter(Lecture.id == l_id).first()
+        if lecture:
+            session.delete(lecture)
+            session.commit()
+            return {'id': l_id}
         return None

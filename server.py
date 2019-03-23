@@ -28,9 +28,17 @@ def convert_udacity():
 
 
 @app.route('/lectures', methods=['POST'])
-def create():
+def create_lecture():
     validate_lecture(request.json)
     return jsonify(lecture_service.create_lecture(request.json))
+
+
+@app.route('/lectures', methods=['GET'])
+def get_lectures():
+    course = request.args.get('course', None)
+    name = request.args.get('name', None)
+    limit = int(request.args.get('limit', 10))
+    return jsonify(lecture_service.get_lectures(course, name, limit))
 
 
 @app.route('/lectures/<lectureid>', methods=['GET'])
@@ -41,6 +49,21 @@ def get_lecture(lectureid):
     if result:
         return jsonify(result)
     abort(make_response(jsonify(message="lecture not found"), 404))
+
+
+@app.route('/lectures/<lectureid>', methods=['DELETE'])
+def delete_lecture(lectureid):
+    if lectureid is None:
+        abort(make_response(jsonify(message="you must supply a lecture id"), 400))
+    result = lecture_service.delete_lecture(lectureid)
+    if result:
+        return jsonify(result)
+    abort(make_response(jsonify(message="lecture not found"), 404))
+
+
+@app.route('/lectures/<lectureid>/summarizations', methods=['POST'])
+def create_summary(lectureid):
+    return None
 
 
 @app.route('/')
