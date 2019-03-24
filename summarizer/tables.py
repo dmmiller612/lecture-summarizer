@@ -42,6 +42,7 @@ class Summarization(Base):
     lecture = Column(Integer, ForeignKey('lecture.id'))
     name = Column(String, index=True)
     ratio = Column(Float)
+    content = Column(Text)
 
 
 

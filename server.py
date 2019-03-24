@@ -3,11 +3,13 @@ from flask import request, jsonify, abort, make_response
 from flask_cors import CORS
 from summarizer.LectureService import LectureService
 from summarizer.UdacityParser import UdacityParser
+from summarizer.SummarizationService import SummarizationService
 
 app = Flask(__name__)
 CORS(app)
 
 lecture_service = LectureService()
+summary_service = SummarizationService()
 
 
 def validate_lecture(request):
@@ -61,9 +63,42 @@ def delete_lecture(lectureid):
     abort(make_response(jsonify(message="lecture not found"), 404))
 
 
-@app.route('/lectures/<lectureid>/summarizations', methods=['POST'])
+@app.route('/lectures/<lectureid>/summaries', methods=['POST'])
 def create_summary(lectureid):
-    return None
+    if lectureid is None:
+        abort(make_response(jsonify(message="you must supply a lecture id"), 400))
+    result = summary_service.create_summary(lectureid, request.json)
+    if result:
+        return jsonify(result)
+    abort(make_response(jsonify(message="lecture not found"), 404))
+
+
+@app.route('/lectures/<lectureid>/summaries', methods=['GET'])
+def get_summaries(lectureid):
+    lecture: int = lectureid
+    name: str = request.args.get('name', None)
+    limit: int = int(request.args.get('limit', 10))
+    return jsonify(summary_service.list_summaries(name, lecture, limit))
+
+
+@app.route('/lectures/<lectureid>/summaries/<summaryid>', methods=['GET'])
+def get_summary(lectureid, summaryid):
+    if lectureid is None or summaryid is None:
+        abort(make_response(jsonify(message="lecture id and summary id must be supplied in URL"), 400))
+    summary = summary_service.get_summary(lectureid, summaryid)
+    if summary:
+        return jsonify(summary)
+    abort(make_response(jsonify(message="Summary or lecture not found"), 404))
+
+
+@app.route('/lectures/<lectureid>/summaries/<summaryid>', methods=['DELETE'])
+def delete_lecture(lectureid, summaryid):
+    if lectureid is None or summaryid is None:
+        abort(make_response(jsonify(message="you must supply a lecture id and summary id"), 400))
+    result = summary_service.delete_summary(summaryid)
+    if result:
+        return jsonify(result)
+    abort(make_response(jsonify(message="summary or lecture not found"), 404))
 
 
 @app.route('/')

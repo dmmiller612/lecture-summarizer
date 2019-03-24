@@ -8,6 +8,7 @@ from summarizer.BertParent import BertParent
 import matplotlib
 matplotlib.use('TkAgg')
 import matplotlib.pyplot as plt
+from typing import List
 
 
 class ClusterFeatures(object):
@@ -112,7 +113,7 @@ class SingleModelProcessor(object):
         self.model = BertParent(model, model_size)
         self.use_hidden = use_hidden
 
-    def run_clusters(self, content, ratio=0.2):
+    def run_clusters(self, content, ratio=0.2) -> List[str]:
         hidden = self.model.create_matrix(content, self.use_hidden)
         hidden_args = ClusterFeatures(hidden).cluster(ratio)
         if hidden_args[0] != 0:
