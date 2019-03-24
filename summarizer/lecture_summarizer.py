@@ -106,6 +106,20 @@ class LectureEnsembler(object):
         return to_return
 
 
+class SingleModelProcessor(object):
+
+    def __init__(self, model='bert', model_size='large', use_hidden=True):
+        self.model = BertParent(model, model_size)
+        self.use_hidden = use_hidden
+
+    def run_clusters(self, content, ratio=0.2):
+        hidden = self.model.create_matrix(content, self.use_hidden)
+        hidden_args = ClusterFeatures(hidden).cluster(ratio)
+        if hidden_args[0] != 0:
+            hidden_args.insert(0,0)
+        return [content[j] for j in hidden_args]
+
+
 class PostTextProcessor(object):
 
     REMOVAL_WORDS = ['whereas', 'finally', 'or']
