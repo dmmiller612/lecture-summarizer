@@ -1,5 +1,5 @@
 from summarizer.tables import Summarization, Engine
-from typing import List, Tuple, Dict
+from typing import List, Dict
 from summarizer.lecture_summarizer import SingleModelProcessor
 from nltk import tokenize
 from summarizer.LectureService import LectureService
@@ -31,7 +31,7 @@ class SummarizationService(object):
 
         initial_sentences = self.__process_content_sentences(lecture_content)
         sentences = self.bert_model.run_clusters(initial_sentences, ratio)
-        result: str = ' '.join(sentences)
+        result: str = ' '.join(sentences).strip()
         summary = Summarization(name=summary_name, lecture=lecture_id, ratio=ratio, content=result)
 
         session = Engine.get_instance(self.use_memory).Session()
