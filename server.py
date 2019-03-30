@@ -92,7 +92,7 @@ def get_summary(lectureid, summaryid):
 
 
 @app.route('/lectures/<lectureid>/summaries/<summaryid>', methods=['DELETE'])
-def delete_lecture(lectureid, summaryid):
+def delete_summary(lectureid, summaryid):
     if lectureid is None or summaryid is None:
         abort(make_response(jsonify(message="you must supply a lecture id and summary id"), 400))
     result = summary_service.delete_summary(summaryid)

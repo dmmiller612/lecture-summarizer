@@ -1,0 +1,8 @@
+.dockerignore
+.git
+.gitignore
+squader/
+squad_bert_base/
+Documentation/
+data/
+squad_bert.tar.gz

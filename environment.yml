@@ -1,0 +1,19 @@
+name: summary
+channels:
+- https://repo.anaconda.com/pkgs/main/linux-64
+- conda-forge
+dependencies:
+- Flask
+- numpy
+- nltk
+- pip:
+  - sqlalchemy
+  - torch
+  - pytorch-pretrained-bert
+  - annoy
+  - flask-cors
+  - Cython
+  - tqdm
+  - sklearn
+  - gensim
+  - matplotlib

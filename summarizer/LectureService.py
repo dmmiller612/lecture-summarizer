@@ -1,5 +1,5 @@
 from summarizer.tables import Lecture, Engine
-from typing import List, Set, Dict
+from typing import List, Dict
 
 
 class LectureService(object):

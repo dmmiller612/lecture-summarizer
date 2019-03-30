@@ -1,7 +1,6 @@
 from annoy import AnnoyIndex
 from summarizer.BertParent import BertParent
 import numpy as np
-from sklearn.decomposition import PCA
 
 
 class BertSearcher(BertParent):

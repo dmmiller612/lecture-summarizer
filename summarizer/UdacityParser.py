@@ -1,6 +1,7 @@
+import nltk
+nltk.download('punkt')
 from nltk import tokenize
-
-from typing import List, Set, Dict
+from typing import List, Dict
 
 
 class UdacityParser(object):
