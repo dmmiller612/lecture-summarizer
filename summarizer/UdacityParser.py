@@ -1,4 +1,5 @@
 from nltk import tokenize
+
 from typing import List, Set, Dict
 
 
@@ -30,11 +31,12 @@ class UdacityParser(object):
         total: str = ''
         for data in self.all_data:
             if not self.__should_skip(data):
-                cleaned = data.replace('&gt;', '').replace('\n', '')
-                total += ' ' + cleaned
+                cleaned = data.replace('&gt;', '').replace('\n', '').strip()
+                if cleaned:
+                    total += ' ' + cleaned
         sentences = self.__process_sentences(total)
         return sentences
 
     def convert_to_paragraphs(self) -> Dict[str, str]:
         sentences: List[str] = self.run()
-        return {"paragraph": ' '.join(sentences)}
+        return {"paragraph": ' '.join([sentence.strip() for sentence in sentences]).strip()}
