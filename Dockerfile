@@ -23,5 +23,4 @@ WORKDIR /opt/service
 
 RUN pip3 install -r requirements.txt
 
-ENV PATH /opt/conda/envs/env/bin:$PATH
 CMD /bin/bash -c "python3 server.py"
