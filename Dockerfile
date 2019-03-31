@@ -1,4 +1,4 @@
-FROM conda/miniconda3
+FROM ubuntu:18.04
 
 RUN apt-get update && \
     apt-get install -y sudo \
@@ -7,23 +7,21 @@ RUN apt-get update && \
     libcurl4-openssl-dev \
     libssl-dev \
     wget \
-    python 3.6 python3-pip \
+    python3-dev \
+    python3-pip \
     libxrender-dev \
     libxext6 \
     libsm6 \
-    openssl \
-    python3-dev git
+    openssl
 
 RUN mkdir -p /opt/service
 RUN mkdir -p /opt/service/summarizer
 COPY summarizer /opt/service/summarizer
 COPY server.py /opt/service
-COPY environment.yml /opt/service
+COPY requirements.txt /opt/service
 WORKDIR /opt/service
 
-RUN conda create -n summary python=3.6 \
-    && conda env update -n summary -f environment.yml \
-    && echo "source activate summary" >> ~/.bashrc
+RUN pip3 install -r requirements.txt
 
 ENV PATH /opt/conda/envs/env/bin:$PATH
-CMD /bin/bash -c "source activate summary && python server.py"
+CMD /bin/bash -c "python3 server.py"

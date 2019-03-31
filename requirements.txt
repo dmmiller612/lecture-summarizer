@@ -1,0 +1,13 @@
+Flask
+numpy
+nltk
+sqlalchemy
+torch
+pytorch-pretrained-bert
+annoy
+flask-cors
+Cython
+tqdm
+sklearn
+gensim
+matplotlib
