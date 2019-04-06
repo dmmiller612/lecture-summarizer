@@ -7,8 +7,8 @@ In this document, we will explain in the initial layout of the REST Api for lect
 | /lectures                                        | POST           | The user can upload  lecture content, which can then be utilized for summarization. | Params: course, content, name                               |
 | /lectures                                        | GET            | Get all uploaded lectures.                                                           | Query Params: course, name                                  |
 | /lectures/{id}                                   | GET            | Retrieve a lecture.                                                                  | Query Params: None                                          |
-| /lectures/{id}/summarizations                    | POST/GET       | Create a summarization or  GET all summarizations for a given lecture.               | Params: name, ratio, Query Params: custom_tag |
-| /lectures/{id}/summarizations/{summarization_id} | GET/DELETE     | Get or delete a summarized lecture.                                                  | None                                                        |
+| /lectures/{id}/summaries                         | POST/GET       | Create a summarization or  GET all summarizations for a given lecture.               | Params: name, ratio, Query Params: custom_tag |
+| /lectures/{id}/summaries/{summarization_id}      | GET/DELETE     | Get or delete a summarized lecture.                                                  | None                                                        |
 
 
 ## POST /lectures
