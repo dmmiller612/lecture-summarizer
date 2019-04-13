@@ -128,10 +128,9 @@ factory = {
 }
 
 
-if __name__ == '__main__':
+def run():
     parser = argparse.ArgumentParser(description='Process and summarize lectures')
-    parser.add_argument('-action',
-                        help='This is the service action you want to run.')
+    parser.add_argument('action')
     parser.add_argument('-path', dest='path', default=None, help='File path of lecture')
     parser.add_argument('-course', dest='course', default=None, help='')
     parser.add_argument('-name', dest='name', default=None, help='')
@@ -144,3 +143,6 @@ if __name__ == '__main__':
 
     factory[args.action](args)()
 
+
+if __name__ == '__main__':
+    run()
