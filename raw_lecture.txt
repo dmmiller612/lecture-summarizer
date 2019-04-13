@@ -1,0 +1,203 @@
+1
+00:00:00,000 --> 00:00:03,300
+A Health Information Exchange or HIE is
+
+2
+00:00:03,300 --> 00:00:06,885
+a specialized network for secure sharing of patient data.
+
+3
+00:00:06,885 --> 00:00:10,500
+There are various HIE architectures that correspond
+
+4
+00:00:10,500 --> 00:00:14,670
+functionally to the three forms of interoperability we discussed earlier.
+
+5
+00:00:14,670 --> 00:00:17,670
+You should recall that the first form of interoperability is
+
+6
+00:00:17,670 --> 00:00:22,160
+simple transport of the data from one provider to another.
+
+7
+00:00:22,160 --> 00:00:27,035
+The transport mechanism has no knowledge or understanding of the data.
+
+8
+00:00:27,035 --> 00:00:35,515
+ONC created the Direct Project in 2010 to specify a simple, secure, scalable,
+
+9
+00:00:35,515 --> 00:00:40,135
+standards-based way to send authenticated encrypted health information
+
+10
+00:00:40,135 --> 00:00:46,395
+directly to known trusted recipients using secure email.
+
+11
+00:00:46,395 --> 00:00:52,310
+This is a graphic illustrating Direct or simplification it assumes among other things,
+
+12
+00:00:52,310 --> 00:00:55,685
+that both providers are using the same Direct server
+
+13
+00:00:55,685 --> 00:00:59,370
+which is called a Health ISP or HISP.
+
+14
+00:00:59,370 --> 00:01:05,385
+You can see the Direct bills on existing technologies for email and securing data.
+
+15
+00:01:05,385 --> 00:01:07,850
+We will discuss those in a moment.
+
+16
+00:01:07,850 --> 00:01:13,998
+Most EHR, HIE and PHR vendors including HealthVault, support Direct.
+
+17
+00:01:13,998 --> 00:01:16,350
+Here, I have clicked on the HealthVault,
+
+18
+00:01:16,350 --> 00:01:18,285
+Health messages menu choice.
+
+19
+00:01:18,285 --> 00:01:20,475
+You can see that my HealthVault account
+
+20
+00:01:20,475 --> 00:01:24,485
+automatically provides me with a special Direct email address
+
+21
+00:01:24,485 --> 00:01:27,180
+that can be used to securely send and receive
+
+22
+00:01:27,180 --> 00:01:31,855
+health data only to or from other Direct email addresses.
+
+23
+00:01:31,855 --> 00:01:36,620
+In Sunny HR's providers can initiate Direct messages from within
+
+24
+00:01:36,620 --> 00:01:41,758
+a charting session such as when they're referring a patient to another provider.
+
+25
+00:01:41,758 --> 00:01:47,720
+We will now briefly discuss some of the standards and processes used by Direct HISPs.
+
+26
+00:01:47,720 --> 00:01:50,390
+To ensure secure transport,
+
+27
+00:01:50,390 --> 00:01:56,540
+Direct combines the Simple Mail Transport Protocol or SMTP with
+
+28
+00:01:56,540 --> 00:02:04,020
+special Direct email address as we just discussed and associated with X.509 certificates.
+
+29
+00:02:04,020 --> 00:02:09,455
+In most cases, an entity wishing to have an email address and credentials issued
+
+30
+00:02:09,455 --> 00:02:16,190
+goes through a process documented in a trust framework established by DirectTrust,
+
+31
+00:02:16,190 --> 00:02:23,955
+a collaborative nonprofit association of health IT and healthcare provider organizations.
+
+32
+00:02:23,955 --> 00:02:28,250
+This trust framework supports both provider to provider and
+
+33
+00:02:28,250 --> 00:02:33,870
+bi-directional exchange between consumers or patients and their providers.
+
+34
+00:02:33,870 --> 00:02:39,690
+Direct uses Secure/Multipurpose Internet Mail Extensions (S/MIME),
+
+35
+00:02:39,690 --> 00:02:43,830
+a public key standard for encrypting e-mail attachments
+
+36
+00:02:43,830 --> 00:02:49,095
+can be in virtually any format from a fax image to a PDF,
+
+37
+00:02:49,095 --> 00:02:54,810
+to a structured XML formatted, HL7, CCDI document.
+
+38
+00:02:54,810 --> 00:03:00,045
+Direct uses encrypted and signed Message Disposition Notifications
+
+39
+00:03:00,045 --> 00:03:03,515
+(MDN) to confirm delivery.
+
+40
+00:03:03,515 --> 00:03:07,100
+This can be particularly important in situations such as when
+
+41
+00:03:07,100 --> 00:03:11,810
+a lab sends a critical result back to the ordering provider using Direct.
+
+42
+00:03:11,810 --> 00:03:14,200
+Domain Name Servers (DNS),
+
+43
+00:03:14,200 --> 00:03:16,628
+the internet's equivalent of a phone book,
+
+44
+00:03:16,628 --> 00:03:19,535
+maintain a directory of domain names
+
+45
+00:03:19,535 --> 00:03:23,465
+and translate them to Internet Protocol IP addresses.
+
+46
+00:03:23,465 --> 00:03:27,830
+Lightweight Directory Access Protocol (LDAP) is
+
+47
+00:03:27,830 --> 00:03:29,540
+an Internet protocol in e-mail and
+
+48
+00:03:29,540 --> 00:03:33,120
+other programs used to look up information from a server.
+
+49
+00:03:33,120 --> 00:03:38,360
+Direct uses both DNS and LDAP to discover the certificates of
+
+50
+00:03:38,360 --> 00:03:40,880
+message recipients prior to sending
+
+51
+00:03:40,880 --> 00:03:45,000
+a message in order to fulfill the encryption functions of S/MIME.
