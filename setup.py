@@ -37,16 +37,6 @@ with io.open(script_name, encoding='utf-8') as handle:
         if match:
             project[match.group(1)] = match.group(3)
 
-project.update(dict(
-    description=__doc__.split('.')[0].split(' - ', 1)[1].strip(),
-    long_description=(io.open('README.rst', encoding='UTF-8').read()
-                      .split('\n.. _setup-start:', 1)[-1].strip()),
-    classifiers=[i.strip()
-                 for i in classifiers.splitlines()
-                 if i.strip() and not i.strip().startswith('#')],
-    keywords=project['keywords'].replace(',', ' ').strip().split(),
-))
-
 # Ensure 'setup.py' is importable by other tools, to access the project's metadata
 __all__ = ['project', 'project_root']
 if __name__ == '__main__':
