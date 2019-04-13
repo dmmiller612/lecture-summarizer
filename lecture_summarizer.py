@@ -28,6 +28,21 @@ class RequestProcessor(object):
             raise RuntimeError(req.json())
         print(req.json())
 
+    def run_get(self, url):
+        req = requests.get(url, headers = {
+            'Content-Type': 'application/json'
+        })
+        if req.status_code > 200:
+            raise RuntimeError(req.json())
+        print(req.json())
+
+    def build_params(self, arg_list):
+        start = '?'
+        for arg in arg_list:
+            if arg:
+                start += '&' + arg if start != '?' else arg
+        return start if start != '?' else ''
+
     @abstractmethod
     def run(self):
         raise NotImplementedError()
@@ -63,12 +78,7 @@ class CreateLecture(RequestProcessor):
         to_upload = self.__get_lecture_content()
         body = self.__create_body(to_upload)
         url = self.base_url + '/lectures'
-        req = requests.post(url, json.dumps(body), headers = {
-            'Content-Type': 'application/json'
-        })
-        if req.status_code > 200:
-            raise RuntimeError(req.json())
-        print(req.json())
+        self.run_post(url, body)
 
 
 class GetLectures(RequestProcessor):
@@ -92,12 +102,7 @@ class GetLectures(RequestProcessor):
     def run(self):
         url = self.base_url + '/lectures'
         url += self.__build_url()
-        req = requests.get(url, headers = {
-            'Content-Type': 'application/json'
-        })
-        if req.status_code > 200:
-            raise RuntimeError(req.json())
-        print(req.json())
+        self.run_get(url)
 
 
 class CreateSummary(RequestProcessor):
@@ -123,8 +128,16 @@ class GetSummaries(RequestProcessor):
     def __init__(self, args):
         super(GetSummaries, self).__init__(args)
 
+    def __build_url(self):
+        if self.args.summary_id:
+            return '/%s' % self.args.summary_id
+        return self.build_params([self.args.name])
+
     def run(self):
-        pass
+        self.validate_args_all_of(['lecture_id'])
+        url = self.base_url + '/lectures/%s/summaries' % self.args.lecture_id
+        url += self.__build_url()
+        self.run_get(url)
 
 
 class DeleteSummary(RequestProcessor):
