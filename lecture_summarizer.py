@@ -1,6 +1,6 @@
 import requests
 import argparse
-from typing import Dict, List
+from typing import List
 from abc import abstractmethod
 import json
 
@@ -146,7 +146,12 @@ class DeleteSummary(RequestProcessor):
         super(DeleteSummary, self).__init__(args)
 
     def run(self):
-        pass
+        self.validate_args_all_of(['lecture_id', 'summary_id'])
+        url = '%s/lectures/%s/summaries/%s' % (self.base_url, self.args.lecture_id, self.args.summary_id)
+        req = requests.delete(url)
+        if req.status_code > 200:
+            raise RuntimeError(req.json())
+        print(req.json())
 
 
 factory = {
