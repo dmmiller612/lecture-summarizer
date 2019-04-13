@@ -20,6 +20,14 @@ class RequestProcessor(object):
         if not any(getattr(self.args, x) is not None for x in item_list):
             raise RuntimeError("Need at least one item in list: %s" % ','.join(item_list))
 
+    def run_post(self, url, body):
+        req = requests.post(url, json.dumps(body), headers = {
+            'Content-Type': 'application/json'
+        })
+        if req.status_code > 200:
+            raise RuntimeError(req.json())
+        print(req.json())
+
     @abstractmethod
     def run(self):
         raise NotImplementedError()
@@ -97,8 +105,17 @@ class CreateSummary(RequestProcessor):
     def __init__(self, args):
         super(CreateSummary, self).__init__(args)
 
+    def __build_body(self):
+        return {
+            'name': self.args.name,
+            'course': self.args.course
+        }
+
     def run(self):
-        pass
+        self.validate_args_all_of(['lecture_id', 'name', 'ratio'])
+        body = self.__build_body()
+        url = '%s/lectures/%s/summaries' % (self.base_url, self.args.lecture_id)
+        self.run_post(url, body)
 
 
 class GetSummaries(RequestProcessor):
