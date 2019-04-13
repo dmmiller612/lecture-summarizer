@@ -67,9 +67,12 @@ def delete_lecture(lectureid):
 def create_summary(lectureid):
     if lectureid is None:
         abort(make_response(jsonify(message="you must supply a lecture id"), 400))
-    result = summary_service.create_summary(lectureid, request.json)
-    if result:
-        return jsonify(result)
+    try:
+        result = summary_service.create_summary(lectureid, request.json)
+        if result:
+            return jsonify(result)
+    except Exception as e:
+        abort(make_response(jsonify(message=str(e)), 400))
     abort(make_response(jsonify(message="lecture not found"), 404))
 
 

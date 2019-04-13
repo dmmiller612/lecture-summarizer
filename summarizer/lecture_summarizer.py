@@ -51,7 +51,7 @@ class ClusterFeatures(object):
         return args
 
     def cluster(self, ratio=0.1):
-        k = int(len(self.features) * ratio)
+        k = 1 if ratio * len(self.features) < 1 else int(len(self.features) * ratio)
         model = self.__get_model(k).fit(self.features)
         centroids = self.__get_centroids(model)
         cluster_args = self.__find_closest_args(centroids)
@@ -113,7 +113,7 @@ class SingleModelProcessor(object):
         self.model = BertParent(model, model_size)
         self.use_hidden = use_hidden
 
-    def run_clusters(self, content, ratio=0.2) -> List[str]:
+    def run_clusters(self, content: List[str], ratio=0.2) -> List[str]:
         hidden = self.model.create_matrix(content, self.use_hidden)
         hidden_args = ClusterFeatures(hidden).cluster(ratio)
         if hidden_args[0] != 0:

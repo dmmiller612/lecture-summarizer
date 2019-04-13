@@ -15,7 +15,7 @@ class SummarizationService(object):
 
     def __process_content_sentences(self, body: str) -> List[str]:
         sentences = tokenize.sent_tokenize(body)
-        return [c for c in sentences if len(c) > 80 and not c.lower().startswith('but') and
+        return [c for c in sentences if len(c) > 75 and not c.lower().startswith('but') and
                 not c.lower().startswith('and')
                 and not c.lower().__contains__('quiz') and
                 not c.lower().startswith('or')]
@@ -29,7 +29,9 @@ class SummarizationService(object):
         ratio: float = float(request_body['ratio'])
         lecture_content: str = lecture['content']
 
-        initial_sentences = self.__process_content_sentences(lecture_content)
+        initial_sentences: List[str] = self.__process_content_sentences(lecture_content)
+        if len(initial_sentences) == 0:
+            raise RuntimeError("No viable sentences found. Consider adding larger lectures.")
         sentences = self.bert_model.run_clusters(initial_sentences, ratio)
         result: str = ' '.join(sentences).strip()
         summary = Summarization(name=summary_name, lecture=lecture_id, ratio=ratio, content=result)
