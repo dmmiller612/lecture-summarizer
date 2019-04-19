@@ -113,7 +113,8 @@ class CreateSummary(RequestProcessor):
     def __build_body(self):
         return {
             'name': self.args.name,
-            'course': self.args.course
+            'course': self.args.course,
+            'ratio': float(self.args.ratio)
         }
 
     def run(self):
