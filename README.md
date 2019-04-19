@@ -5,7 +5,7 @@ this project include a RESTful API to serve these summaries, and a command line 
 find more about the specs of this service and CLI in our documentation directory.
 
 
-## Installation
+## Installation of CLI
 
 The CLI tool can be downloaded using pip with the following command:
 

@@ -123,7 +123,7 @@ class SingleModelProcessor(object):
 
 class PostTextProcessor(object):
 
-    REMOVAL_WORDS = ['whereas', 'finally', 'or']
+    REMOVAL_WORDS = ['whereas', 'finally', 'or', 'also']
 
     def __init__(self, results):
         self.results = results
