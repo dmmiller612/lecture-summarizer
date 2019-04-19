@@ -170,7 +170,7 @@ def run():
     parser.add_argument('-course', dest='course', default=None, help='')
     parser.add_argument('-name', dest='name', default=None, help='')
     parser.add_argument('-lecture-id', dest='lecture_id', default=None, help='')
-    parser.add_argument('-ratio', dest='path', help='', default=None)
+    parser.add_argument('-ratio', dest='ratio', help='', default=None)
     parser.add_argument('-summary-id', dest='summary_id', default=None, help='')
     parser.add_argument('-base-path', dest='base_path', default='54.85.20.109:5000', help='')
 
