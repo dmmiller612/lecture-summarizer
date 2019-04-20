@@ -38,7 +38,7 @@ This endpoint is used to retrieve a single lecture
 /lectures/{id}
 ```
 
-## POST /lectures/{id}/summarizations
+## POST /lectures/{id}/summaries
 
 This endpoint is used to create a summarization from a lecture
 ```json
@@ -48,9 +48,15 @@ This endpoint is used to create a summarization from a lecture
 }
 ```
 
-## GET/DELETE /lectures/{id}/summarizations/{summarization_id} 
+## GET /lectures/{id}/summaries
+```
+/lectures/{id}/summaries?name=course_name
+/lectures/{id}/summaries
+```
+
+## GET/DELETE /lectures/{id}/summaries/{summarization_id} 
 
 This endpoint allows you to get or delete a summarization.
 ```
-/lectures/{id}/summarizations/{summarization_id} 
+/lectures/{id}/summaries/{summarization_id} 
 ```
