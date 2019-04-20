@@ -38,9 +38,10 @@ class RequestProcessor(object):
 
     def build_params(self, arg_list):
         start = '?'
-        for arg in arg_list:
+        for name, arg in arg_list:
             if arg:
-                start += '&' + arg if start != '?' else arg
+                to_add = ('&%s=%s' if start != '?' else '%s=%s') % (name, arg)
+                start += to_add
         return start if start != '?' else ''
 
     @abstractmethod
@@ -86,18 +87,10 @@ class GetLectures(RequestProcessor):
     def __init__(self, args):
         super(GetLectures, self).__init__(args)
 
-    def __build_params(self):
-        start = '?'
-        arg_list = [self.args.course, self.args.name]
-        for arg in arg_list:
-            if arg:
-                start += '&' + arg if start != '?' else arg
-        return start if start != '?' else ''
-
     def __build_url(self):
         if self.args.lecture_id:
             return '/%s' % self.args.lecture_id
-        return self.__build_params()
+        return self.build_params([('course', self.args.course), ('name', self.args.name)])
 
     def run(self):
         url = self.base_url + '/lectures'
@@ -132,7 +125,7 @@ class GetSummaries(RequestProcessor):
     def __build_url(self):
         if self.args.summary_id:
             return '/%s' % self.args.summary_id
-        return self.build_params([self.args.name])
+        return self.build_params([('name', self.args.name)])
 
     def run(self):
         self.validate_args_all_of(['lecture_id'])
