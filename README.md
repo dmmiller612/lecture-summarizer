@@ -72,7 +72,7 @@ Just like creating a lecture, creating a summary is a painless process. Below is
 a specified lecture.
 
 ```bash
-lecture-summarizer create-summary -lecture-id 1 -name my_summary_name -ratio 0.2
+lecture-summarizer create-summary -lecture-id 1 -name 'my summary name' -ratio 0.2
 ``` 
 
 The `ratio` specifies approximately how much of the lecture that you want to summarize.
@@ -93,5 +93,10 @@ lecture-summarizer get-summaries -lecture-id 1
 
 ##### Get All Summaries by Name
 ```bash
-lecture-summarizer get-summaries -lecture-id -name my_summary_name
+lecture-summarizer get-summaries -lecture-id 1 -name 'my summary name'
+```
+
+##### Delete a Summary
+```bash
+lecture-summarizer delete-summary -lecture-id 1 -summary-id 1
 ```
