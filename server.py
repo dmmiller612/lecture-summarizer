@@ -115,7 +115,7 @@ def page_not_found(e):
 
 
 @app.errorhandler(500)
-def page_not_found(e):
+def unknown_error(e):
     return jsonify(error=500, text='Unexpected Error Occurred'), 500
 
 
