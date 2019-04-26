@@ -4,6 +4,13 @@ This project utilizes the BERT model to perform extractive text summarization on
 this project include a RESTful API to serve these summaries, and a command line interface for easier interaction. You can 
 find more about the specs of this service and CLI in our `Documentation` directory.
 
+## Running the service locally
+First, docker is required to run the service locally. To start the service, run the command:
+```bash
+make docker-build-run
+```
+On the first run of a service, this may take quite some time to complete.
+
 
 ## Installation of CLI
 
@@ -53,7 +60,7 @@ lecture-summarizer get-lectures -lecture-id 1
 
 ##### Get All  Lectures
 ```bash
-lecture-summarizer get-lectures -lecture-id 1
+lecture-summarizer get-lectures
 ```
 
 ##### Get Lectures by Name
@@ -99,4 +106,56 @@ lecture-summarizer get-summaries -lecture-id 1 -name 'my summary name'
 ##### Delete a Summary
 ```bash
 lecture-summarizer delete-summary -lecture-id 1 -summary-id 1
+```
+
+## RESTful API Docs
+
+##### POST /lectures
+
+This endpoint creates a lecture.
+
+```json
+{
+  "course": "course identifier",
+  "content": "Lecture String Content",
+  "name": "Lecture name"
+}
+``` 
+
+##### GET /lectures
+
+This endpoint is used to retrieve lectures. The user can supply two query params shown below.
+```
+/lectures?course=unique_identifier
+/lectures?name=course_name
+```
+
+##### GET /lectures/{id}
+
+This endpoint is used to retrieve a single lecture
+```
+/lectures/{id}
+```
+
+##### POST /lectures/{id}/summaries
+
+This endpoint is used to create a summarization from a lecture
+```json
+{
+  "name": "Summarization name",
+  "ratio": "Ratio of sentences to select"
+}
+```
+
+##### GET /lectures/{id}/summaries
+```
+/lectures/{id}/summaries?name=course_name
+/lectures/{id}/summaries
+```
+
+##### GET/DELETE /lectures/{id}/summaries/{summarization_id} 
+
+This endpoint allows you to get or delete a summarization.
+```
+/lectures/{id}/summaries/{summarization_id} 
 ```

@@ -155,7 +155,11 @@ if __name__ == '__main__':
                and not c.lower().__contains__('quiz') and
                not c.lower().startswith('or')]
 
+    ClusterFeatures(BertParent('bert', 'large').create_matrix(content, use_hidden=False), pca_k=2)\
+        .create_plots(4, './example2.png', title='IHI Lecture with BERT CLS Layer')
+    """
     res = LectureEnsembler(content).run_clusters(0.2)
+
 
     results = []
     for j in res:
@@ -164,6 +168,7 @@ if __name__ == '__main__':
     for r in results:
         print(r)
     print(results)
+    """
 
 
 
