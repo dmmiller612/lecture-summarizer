@@ -26,7 +26,11 @@ lecture-summarizer get-lectures
 ```
 
 Note, that this tool automatically uses our cloud based service by default. You can use your local service by supplying 
-the `-base_path` option, such as `-base_path localhost:5000`.
+the `-base_path` option, such as `-base_path localhost:5000`. As an example, to get lectures locally, you could run: 
+
+```bash
+lecture-summarizer get-lectures -base-path localhost:5000
+``` 
 
 
 ## How to use CLI tool
