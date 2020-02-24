@@ -48,7 +48,7 @@ lecture, using the `raw_lecture.txt` file at the parent of the lecture-summarize
 the content issuing the following command:
 
 ```bash
-lecture-summarizer create-summary -path ./raw_lecture.txt -name example_first_lecture -course IHI
+lecture-summarizer create-lecture -path ./raw_lecture.txt -name example_first_lecture -course IHI
 ```
 
 Currently, the lecture-summarizer can parse sdp file formats, which are common for Udacity-based lectures. Notice that one 
