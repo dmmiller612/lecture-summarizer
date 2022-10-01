@@ -2,7 +2,7 @@
 
 This project utilizes the BERT model to perform extractive text summarization on lecture transcripts. The contents of 
 this project include a RESTful API to serve these summaries, and a command line interface for easier interaction. You can 
-find more about the specs of this service and CLI in our `Documentation` directory.z
+find more about the specs of this service and CLI in our `Documentation` directory.
 
 Paper: https://arxiv.org/abs/1906.04165
 
